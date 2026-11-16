@@ -468,7 +468,7 @@ function runQuiz(el, items, o) {
     if (it.type === "learn") h += `<h3>${it.title}</h3>${it.html}${vis(it.vis)}<button class="big" data-q="next">Continue</button>`;
     else if (it.type === "code") { const sn = findSnip(it.snippet); h += `<h3>▶ ${esc(it.title)}</h3><p class="muted">${sn.desc}</p>${editor("q-" + sn.id, sn.code)}<button class="big sec" data-q="next">Continue</button>`; }
     else {
-      h += `<div class="q">${it.q}</div>${vis(it.vis)}`;
+      h += `<div class="q">${it.q}</div>${it.source ? `<div class="muted src-line">Sources: ${esc(it.source)}</div>` : ""}${vis(it.vis)}`;
       if (it.code) h += `<pre class="out" style="white-space:pre-wrap">${esc(it.code)}</pre>`;
       if (it.type === "mcq") h += it.choices.map((c, k) => `<button class="choice" data-q="pick" data-k="${k}">${c}</button>`).join("");
       if (it.type === "num") h += `<input class="ans" inputmode="decimal" autocomplete="off" autocapitalize="off" placeholder="Type your answer (e.g. 0.25 or 1/4)">`;
@@ -831,14 +831,14 @@ window.addEventListener("pagehide", trkLeave);
 /* ---------- where is an exercise? (weak spots, links) ---------- */
 function infoOf(id) {
   if (TEX[id]) { const e = TEX[id]; return { id, title: e.title.replace(/^🏆 |^👹 /, ""), sec: e.sec === "examboss" ? "boss" : e.sec, name: e.sec === "examboss" ? "👹 Exam Boss" : SEC_NAMES[e.sec], level: e.level, kind: "code" }; }
-  if (THX[id]) { const e = THX[id]; return { id, title: e.title, sec: "theory", name: "🧠 Theory Prep", level: e.level, kind: "th" }; }
+  if (THX[id]) { const e = THX[id]; const page = e.page || "theory"; const names = { theory: "🧠 Theory Prep", longq: "📝 Long Questions", pex: "📋 Practice exercises" }; return { id, title: e.title, sec: page, name: names[page] || "🧠 Theory Prep", level: e.level, kind: "th", page }; }
   if (PPX[id]) { const p = PPX[id]; const sid = BYID.calc ? "calc" : "probability"; return { id, title: p.title, sec: sid, name: SEC_NAMES[sid] || "Calculations", level: p.level, kind: "pp" }; }
   return null;
 }
 function goTo(id) {
   const i = infoOf(id); if (!i) return;
   if (i.kind === "code" && i.sec !== "boss") { if (i.level === "boss") S.ui._scroll = "#bossBlock"; else { const list = SEC_EX(i.sec, i.level); S.ui[i.sec] = { lv: i.level, i: Math.max(0, list.findIndex(x => x.id === id)) }; S.ui._scroll = "#tdBlock"; } }
-  else if (i.kind === "th") { S.ui.theory = { lv: i.level === "boss" ? "final" : i.level, id }; S.ui._scroll = "#thHost"; }
+  else if (i.kind === "th") { const page = i.page || "theory"; if (page === "longq" || page === "pex") { S.ui[page] = { id: i.id }; S.ui._scroll = "#thHost"; save(); const target = "#/" + (page === "pex" ? "exercises" : "longq"); if (location.hash === target) route(); else location.hash = target; return; } S.ui.theory = { lv: i.level === "boss" ? "final" : i.level, id }; S.ui._scroll = "#thHost"; }
   else if (i.kind === "pp") { const lv = i.level; S.ui.pp = { lv, id }; S.ui._scroll = "#ppBlock"; }
   save(); const target = i.kind === "code" && i.sec === "boss" ? "#/boss" : "#/" + i.sec;
   if (location.hash === target) route(); else location.hash = target;
@@ -937,14 +937,14 @@ document.addEventListener("input", e => { const t = e.target; if (t.matches && t
 /* ---------- Theory Prep page ---------- */
 const TW = {};  // last check results (in memory)
 const TH_LV = [["easy", "🟢 Easy"], ["medium", "🟡 Medium"], ["hard", "🔴 Hard"], ["final", "🏆 Final"]];
-const thList = lv => TH.filter(e => e.level === lvKey(lv));
+const thList = lv => TH.filter(e => e.level === lvKey(lv) && !e.page);
 const thSolved = lv => thList(lv).filter(e => (S.ex[e.id] || {}).solved).length;
 const topicName = t => (TD.topics.find(x => x[0] === t) || [0, t === "final" ? "🏆 Everything together" : t])[1];
 function thCard(e) {
   const L = LV[e.level], st = xs(e.id, e.marks), res = TW[e.id], hintOpen = st.fails >= L.hintFails, solOpen = st.solved || st.fails >= L.solFails;
   const earned = res ? res.reduce((s, r) => s + (r ? r.earned : 0), 0) : null;
-  return `<div class="ex todo ${e.level === "boss" ? "boss" : e.level}" data-thx="${e.id}"><div class="hd">${L.ico} ${esc(e.title)}<small>${e.marks} marks · +${L.xp} XP</small></div><div class="bd">
-  <p class="muted" style="margin-top:0">${topicName(e.topic)} · ${e.intro}</p>
+  return `<div class="ex todo ${e.level === "boss" ? "boss" : e.level}" data-thx="${e.id}"><div class="hd">${L.ico} ${esc(e.title)}<small>${e.marks} marks · +${L.xp} XP</small>${typeof srcTag === "function" ? srcTag(e) : ""}</div><div class="bd">
+  <p class="muted" style="margin-top:0">${e.pointer ? `<span class="ptr-tag">${esc(e.pointer)}</span> · ` : ""}${topicName(e.topic)} · ${e.intro}</p>
   ${e.parts.map((p, pi) => `<div class="tpart" data-pi="${pi}" data-key="th:${e.id}:${pi}">${partHTML(p, `th:${e.id}:${pi}`, res && res[pi], { labels: e.level !== "hard" || st.fails >= 2 || st.solved })}</div>`).join("")}
   <div class="row"><button type="button" data-fx="thcheck">✅ Check my answers</button><button type="button" class="sec" data-fx="askliora" data-id="${e.id}">🤖 Ask Liora (copy)</button><button type="button" class="sec" data-fx="thhint" ${hintOpen ? "" : "disabled"}>💡 Hint <span class="hn">${st.hints}/${e.hints.length}</span></button></div>
   <div class="row"><button type="button" class="sec" data-fx="thsol" ${solOpen ? "" : "disabled"}>${solOpen ? "👀 Model answer" : "🔒 Model answer"}</button><button type="button" class="sec" data-fx="threset">↺ Start over</button></div>
@@ -985,7 +985,7 @@ document.addEventListener("click", e => {
   }
 });
 document.addEventListener("input", e => {});
-FX.homeExtra = () => `<div class="note"><b>Practice Lab v3 engine, ML600 content.</b> <b>Theory Prep</b> (easy / medium / hard), <b>show-your-working calculations</b> with a working pad, a timed <b>Exam mode</b> (3 hours), the study-buddy circle (nudges, voice, Chat, Export to .py, Ask Liora), <b>Resources</b> and <b>My files</b>. Progress is saved on this device. <span class="muted">Open <a href="#/mock">Mock Exam</a> when you are ready to sit the 3-hour paper (mirrors the practice-question paper).</span></div><div class="home-grid"><a class="mock-hl" href="#/mock"><span style="font-size:26px">📝</span><span><b>Mock Exam</b><small>Friday paper style · 3 hours · 100 marks · Export for Liora</small></span></a><a href="#/theory"><span style="font-size:26px">🧠</span><span><b>Theory Prep</b><small>libraries · metrics · scaling · models · R²</small></span></a><a href="#/exam"><span style="font-size:26px">⏱</span><span><b>Exam mode</b><small>3 hours, 100 marks, auto-marked</small></span></a><a href="#/resources"><span style="font-size:26px">📚</span><span><b>Resources</b><small>NotebookLM, Vaia, starter .py files</small></span></a><a href="#/files"><span style="font-size:26px">🗂</span><span><b>My files</b><small>upload PDFs, images, .py, .csv</small></span></a></div><div class="links studylinks">${studyA(LINK_VAIA, "🎓 " + LINK_VAIA.label)}${studyA(LINK_NB, "📓 " + LINK_NB.label, "alt")}</div>`;
+FX.homeExtra = () => `<div class="note"><b>Practice Lab v3 engine, ML600 content.</b> <b>Theory Prep</b> (easy / medium / hard), <b>show-your-working calculations</b> with a working pad, a timed <b>Exam mode</b> (3 hours), the study-buddy circle (nudges, voice, Chat, Export to .py, Ask Liora), <b>Resources</b> and <b>My files</b>. Progress is saved on this device. <span class="muted">Open <a href="#/mock">Mock Exam</a> when you are ready to sit the 3-hour paper (mirrors the practice-question paper).</span></div><div class="home-grid"><a class="mock-hl" href="#/mock"><span style="font-size:26px">📝</span><span><b>Mock Exam</b><small>Friday paper style · 3 hours · 100 marks · Export for Liora</small></span></a><a href="#/theory"><span style="font-size:26px">🧠</span><span><b>Theory Prep</b><small>libraries · metrics · scaling · models · R²</small></span></a><a href="#/exam"><span style="font-size:26px">⏱</span><span><b>Exam mode</b><small>3 hours, 100 marks, auto-marked</small></span></a><a href="#/longq"><span style="font-size:26px">📝</span><span><b>Long Questions</b><small>Akhona LongQuestions_1 · 3 × 25 marks</small></span></a><a href="#/exercises"><span style="font-size:26px">📋</span><span><b>Practice exercises</b><small>Q1–Q22 from her Ch1–3 worksheet</small></span></a><a href="#/resources"><span style="font-size:26px">📚</span><span><b>Resources</b><small>NotebookLM, Vaia, starter .py files</small></span></a><a href="#/files"><span style="font-size:26px">🗂</span><span><b>My files</b><small>upload PDFs, images, .py, .csv</small></span></a></div><div class="links studylinks">${studyA(LINK_VAIA, "🎓 " + LINK_VAIA.label)}${studyA(LINK_NB, "📓 " + LINK_NB.label, "alt")}</div>`;
 
 /* ---------- worked probability (Brilliant style): keyword → formula → substitute → answer ---------- */
 const PRULE = Object.fromEntries((TD.rules || []).map(r => [r.id, r]));
@@ -1049,7 +1049,7 @@ function stepInput(p, k, val, dis) {
 function ppCard(p) {
   const st = ppState(p), L = LV[lvKey(p.level)], steps = st.steps; let cur = PSTEPS.findIndex(x => !((steps[x[0]] || {}).ok || (steps[x[0]] || {}).rev)); const done = cur < 0; if (done) cur = 4;
   const earned = ppEarned(p, steps);
-  let h = `<div class="ex todo ${lvKey(p.level)} pp" data-ppx="${p.id}"><div class="hd">${L.ico} ${esc(p.title)}<small>${p.total} marks · +${L.xp} XP</small></div><div class="bd"><div class="q" style="margin-top:0">${p.q}</div>${vis(p.vis)}
+  let h = `<div class="ex todo ${lvKey(p.level)} pp" data-ppx="${p.id}"><div class="hd">${L.ico} ${esc(p.title)}<small>${p.total} marks · +${L.xp} XP</small>${typeof srcTag === "function" ? srcTag(p) : ""}</div><div class="bd"><div class="q" style="margin-top:0">${p.q}</div>${vis(p.vis)}
   ${padHTML(p, "pad:" + p.id)}
   <details class="rev"><summary>📋 Formula list (like the exam sheet)</summary><ul class="flist">${TD.rules.map(r => `<li><b>${esc(r.n)}</b><br><span class="rule">${esc(r.f)}</span><br><small class="muted">keyword: ${esc(r.kw)}</small></li>`).join("")}</ul></details>
   <div class="pbar"><i style="width:${Math.round(earned / p.total * 100)}%"></i></div><div class="muted">Marks so far: <b>${earned}</b> / ${p.total} (1 mark per skill, like Q3.1 in the 2025 paper)</div>`;
@@ -1494,15 +1494,76 @@ document.addEventListener("click", e => {
   }
 });
 
+/* ===== v3 · part 11: Long Questions, Practice exercises, Sources tags ===== */
+function srcTag(item) {
+  const s = item && (item.source || item.src);
+  if (!s) return "";
+  return `<span class="src-tag" title="Source of this item">Sources: ${esc(s)}</span>`;
+}
+FX.boot.push(() => {
+  if (document.getElementById("srcTagCss")) return;
+  const s = document.createElement("style"); s.id = "srcTagCss";
+  s.textContent = `.src-tag{display:inline-block;font-size:11px;line-height:1.3;padding:2px 8px;border-radius:999px;background:var(--card-2, var(--bg2, #eee));color:var(--muted, #555);margin:4px 0 0 8px;font-weight:600;vertical-align:middle}
+.ptr-tag{display:inline-block;font-size:11px;padding:2px 8px;border-radius:999px;background:var(--accent-soft, #e8f0fe);color:var(--accent, #1a56a8);font-weight:600}
+.src-line{margin:0 0 10px}`;
+  document.head.appendChild(s);
+});
+
+const _todoCard11 = typeof todoCard === "function" ? todoCard : null;
+if (_todoCard11) {
+  todoCard = function (e) {
+    return _todoCard11(e).replace("</small></div><div class=\"bd\">", `</small>${srcTag(e)}</div><div class="bd">`);
+  };
+}
+
+FX.secExtra = (function (prev) {
+  return function (s) {
+    const base = (typeof prev === "function" ? prev(s) : "") || "";
+    const src = (s && s.source) || "";
+    if (!src) return base;
+    return base + `<p class="muted src-line">Sources: ${esc(src)}</p>`;
+  };
+})(FX.secExtra);
+
+function pageItemList(page) { return TH.filter(e => e.page === page); }
+function setPage(html, title) { return { html, title }; }
+function itemPage(page, title, lead, icon) {
+  return function () {
+    const ui = S.ui[page] || (S.ui[page] = {});
+    const list = pageItemList(page);
+    const cur = list.find(e => e.id === ui.id) || list.find(e => !(S.ex[e.id] || {}).solved) || list[0];
+    if (cur) ui.id = cur.id;
+    const solved = list.filter(e => (S.ex[e.id] || {}).solved).length;
+    return `<h1>${icon} ${esc(title)}</h1><span class="scope">${lead}</span>${FX.studyLinks(title, page)}
+    <div class="note">${page === "longq"
+      ? "<b>Akhona’s LongQuestions_1</b> — three 25-mark questions, in the same step-by-step style as Theory Prep: hints, a typed answer, and a model answer to compare with. These are <b>not</b> in the #/mock paper (the mock still mirrors PracticeQuestions.py). Numbers in Q2 were checked in Python."
+      : "<b>Official Practice Exercises Q1–Q22</b> (Chapters 1–3 worksheet + answer key in Akhona’s folder). Each item is tagged with the matching exam pointer. Q12–Q17 are on the worksheet but are <b>not</b> named exam pointers — they are included so every official Q1–Q22 is here. The student file Practice exercises.py is an answer file, not the memo; the official key is what is marked against."}</div>
+    <div class="card" id="thBlock"><p class="muted" style="margin-top:0">${solved}/${list.length} solved on this device.</p>
+    <div class="thlist">${list.map(e => { const s2 = S.ex[e.id] || {}; return `<button type="button" class="throw ${e.id === (cur && cur.id) ? "on" : ""} ${s2.solved ? "ok" : ""}" data-fx="pgpick" data-page="${page}" data-id="${e.id}"><span>${s2.solved ? "✅" : "▫️"}</span><span><b>${esc(e.pointer || topicName(e.topic))}</b><small>${esc(e.title)} · ${e.marks} marks</small></span></button>`; }).join("")}</div>
+    <div id="thHost">${cur ? thCard(cur) : ""}</div></div><div class="pager"><a href="#/progress">📊 My progress</a><a href="#/">🏠 Home</a></div>`;
+  };
+}
+FX.pages.longq = setPage(itemPage("longq", "Long Questions", "Akhona’s LongQuestions_1: three 25-mark questions (polynomial regression, logistic + confusion matrix, SVM vs logistic).", "📝"), "Long Questions");
+FX.pages.exercises = setPage(itemPage("pex", "Practice exercises Q1–Q22", "Official Ch1–3 practice worksheet. Tagged by exam pointer. Model answers follow the official answer key.", "📋"), "Practice exercises");
+
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-fx=pgpick]"); if (!b) return;
+  const page = b.dataset.page; S.ui[page] = S.ui[page] || {}; S.ui[page].id = b.dataset.id; save();
+  $("#main").innerHTML = FX.pages[page === "pex" ? "exercises" : page].html(); fitAll($("#main"));
+  trkTouch(b.dataset.id); const host = $("#thHost"); if (host) host.scrollIntoView({ behavior: "smooth", block: "nearest" });
+});
+
+/* After Check/Hint on a longq/pex card, re-render stays on that page because route is not used; thRefresh already replaces the card. */
+
 /* ===== v3 · part 2: nav, progress extras ===== */
-FX.navExtra = () => `<h6>Theory &amp; exam</h6><a href="#/theory" class="${location.hash === "#/theory" ? "active" : ""}">🧠 Theory Prep<span class="tick">${S.done["final:th"] || (S.ex["th-final"] || {}).solved ? "✓" : ""}</span></a><a href="#/mock" class="${location.hash === "#/mock" ? "active" : ""}">📝 Mock Exam<span class="tick">${(S.mock && S.mock.submitted) ? "✓" : ""}</span></a><a href="#/exam" class="${location.hash === "#/exam" ? "active" : ""}">⏱ Exam mode</a><a href="#/resources" class="${location.hash === "#/resources" ? "active" : ""}">📚 Resources</a><a href="#/files" class="${location.hash === "#/files" ? "active" : ""}">🗂 My files</a>`;
+FX.navExtra = () => `<h6>Theory &amp; exam</h6><a href="#/theory" class="${location.hash === "#/theory" ? "active" : ""}">🧠 Theory Prep<span class="tick">${S.done["final:th"] || (S.ex["th-final"] || {}).solved ? "✓" : ""}</span></a><a href="#/longq" class="${location.hash === "#/longq" ? "active" : ""}">📝 Long Questions<span class="tick">${["lq-q1","lq-q2","lq-q3"].every(id => (S.ex[id] || {}).solved) ? "✓" : ""}</span></a><a href="#/exercises" class="${location.hash === "#/exercises" ? "active" : ""}">📋 Practice exercises</a><a href="#/mock" class="${location.hash === "#/mock" ? "active" : ""}">📝 Mock Exam<span class="tick">${(S.mock && S.mock.submitted) ? "✓" : ""}</span></a><a href="#/exam" class="${location.hash === "#/exam" ? "active" : ""}">⏱ Exam mode</a><a href="#/resources" class="${location.hash === "#/resources" ? "active" : ""}">📚 Resources</a><a href="#/files" class="${location.hash === "#/files" ? "active" : ""}">🗂 My files</a>`;
 FX.progressExtra = () => {
   const thRows = TH_LV.map(l => `<td>${thSolved(l[0])}/${thList(l[0]).length}</td>`).join(""), ppRows = PP_LV.map(l => `<td>${ppDone(l[0])}/${ppList(l[0]).length}</td>`).join("");
   const sk = Object.entries(S.ex).filter(([k, v]) => v.skipped && !v.solved).length, pk = Object.entries(S.ex).filter(([k, v]) => v.peeked).length, ap = Object.entries(S.ex).filter(([k, v]) => v.afterPeek).length;
   const tm = Object.values(S.ex).reduce((s, v) => s + (v.time || 0), 0), mins = Math.round(tm / 60000);
   const hist = (S.exam.hist || []).slice(-3).reverse();
   return weakCard(12) + `<div class="card"><h4>🔎 Skips and peeks</h4><p class="muted" style="margin:0">Skipped (opened, left unsolved): <b>${sk}</b> · solution looked at: <b>${pk}</b> · solved only after the solution: <b>${ap}</b> · time practising: <b>${mins} min</b></p></div>
-  <div class="card"><h4>🧠 Theory Prep &amp; ✍️ show-your-working calculations</h4><table class="t"><tr><th></th><th>Easy</th><th>Med</th><th>Hard</th><th>Final</th></tr><tr><td><a href="#/theory">Theory Prep</a></td>${thRows}</tr><tr><td><a href="#/calc">Show your working</a></td>${ppRows}</tr></table></div>
+  <div class="card"><h4>🧠 Theory Prep &amp; ✍️ show-your-working calculations</h4><table class="t"><tr><th></th><th>Easy</th><th>Med</th><th>Hard</th><th>Final</th></tr><tr><td><a href="#/theory">Theory Prep</a></td>${thRows}</tr><tr><td><a href="#/longq">Long Questions</a></td><td colspan="4">${["lq-q1","lq-q2","lq-q3"].filter(id => (S.ex[id] || {}).solved).length}/3 solved</td></tr><tr><td><a href="#/exercises">Practice exercises</a></td><td colspan="4">${TH.filter(e => e.page === "pex").filter(e => (S.ex[e.id] || {}).solved).length}/${TH.filter(e => e.page === "pex").length} solved</td></tr><tr><td><a href="#/calc">Show your working</a></td>${ppRows}</tr></table></div>
   <div class="card"><h4>📝 Mock Exam</h4><p style="margin:0 0 8px">${(S.mock && S.mock.submitted) ? "Submitted. <a href=\"#/mock\">Open your export for Liora</a>." : (S.mock && S.mock.start) ? "In progress. <a href=\"#/mock\">Return to the paper</a>." : "The Friday-style paper, in the exam layout. <a href=\"#/mock\">Start the 3-hour Mock Exam</a>."}</p></div>
   <div class="card"><h4>⏱ Exam mode</h4>${hist.length ? hist.map(h => `<div>${new Date(h.ts).toLocaleString()}: <b>${h.score}/${h.total}</b> in ${Math.round(h.used / 60)} min${h.auto ? " (auto-submitted)" : ""}</div>`).join("") + `<p style="margin:6px 0 0"><a href="#/exam">Open exam mode</a></p>` : `No attempts yet. <a href="#/exam">Start a timed 3-hour mock</a>.`}</div>`;
 };
@@ -1962,7 +2023,7 @@ document.addEventListener("click", e => { const b = e.target.closest("[data-act=
 window.__V3.askText = askText; window.__V3.nudges = nudges; window.__V3.askExamText = askExamText; window.__V3.command = command;
 
 /* ===== v3 · part 7 (small improvements): exact Vaia / NotebookLM links, contextual study buttons, Liora chat (local, IndexedDB `ml600chat`) ===== */
-const LINK_VAIA = { label: "Machine Learning 600 — Vaia keycards", url: "https://app.vaia.com/" };
+const LINK_VAIA = { label: "ML600 Vaia keycards", url: "https://app.studysmarter.de/studyset/71309494" };
 const LINK_NB = { label: "Machine Learning 600 (ML600) — Gemini Notebook", url: "https://notebook.google.com/notebook/1839dd93-ddb7-49bd-ae47-08ebcfe29faa" };
 const studyA = (L, text, cls) => `<a class="${cls || ""}" href="${L.url}" target="_blank" rel="noopener" data-study="${L === LINK_VAIA ? "vaia" : "nb"}">${text}</a>`;
 FX.studyLinks = (topic, id) => `<div class="links studylinks">${studyA(LINK_VAIA, "🎓 Review keycards on Vaia")}${studyA(LINK_NB, "📓 Quiz on NotebookLM", "alt")}</div><div class="muted" style="font-size:13px;margin:-2px 0 8px">Opens “${LINK_VAIA.label}” and “${LINK_NB.label}”. Look for: ${esc(String(topic || "").replace(/^\S+\s(?=[A-Za-z])/, ""))}.</div>${watchHTML(id)}`;
