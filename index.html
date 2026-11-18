@@ -2278,13 +2278,15 @@ const VIDEOS = [
   { id: "Gv9_4yMHFhI", ptr: "intro", tag: "detailed", sec: 765, dur: "12:45", title: "A Gentle Introduction to Machine Learning", channel: "StatQuest with Josh Starmer", note: "A calm overview of what machine learning is. Use it as a warm-up, then jump to the pointer videos.", watched: true },
   { id: "PeMlggyqz0Y", ptr: "intro", tag: "short", sec: 154, dur: "2:34", title: "Machine Learning Explained in 100 Seconds", channel: "Fireship", note: "A fast big-picture recap. Not a substitute for the pointer videos.", watched: true },
 
-  { id: "_T8LGqJtuGc", ptr: "libraries", tag: "detailed", sec: 628, dur: "10:28", title: "Wes McKinney: pandas in 10 minutes | Walkthrough", channel: "PyData", note: "DataFrame, reading a table, and the everyday pandas moves you will use in the lab." },
-  { id: "oet4h_vwWHM", ptr: "libraries", tag: "detailed", sec: 386, dur: "6:26", title: "NumPy explained in 5 minutes - for Machine Learning", channel: "Nur AI", note: "Arrays, shapes and the NumPy operations that sit under scikit-learn." },
+  { id: "_T8LGqJtuGc", ptr: "libraries", tag: "detailed", sec: 628, dur: "10:28", title: "Wes McKinney: pandas in 10 minutes | Walkthrough", channel: "PyData", note: "DataFrame, reading a table, and the everyday pandas moves you will use in the lab.", watched: true, when: "17–18 Nov" },
+  { id: "oet4h_vwWHM", ptr: "libraries", tag: "detailed", sec: 386, dur: "6:26", title: "NumPy explained in 5 minutes - for Machine Learning", channel: "Nur AI", note: "Arrays, shapes and the NumPy operations that sit under scikit-learn.", watched: true, when: "17–18 Nov" },
   { id: "fQqdX7H9Keo", ptr: "libraries", tag: "short", sec: 243, dur: "4:03", title: "Numpy in 5 minutes", channel: "InterviewBuddies", note: "A quick array refresher you can watch passively." },
   { id: "D4VlmL3G4_o", ptr: "libraries", tag: "short", sec: 234, dur: "3:54", title: "HOW TO USE Matplotlib in 4 MINUTES (2020 Python Tutorial)", channel: "Kite", note: "pyplot basics: a figure, a simple plot, and labels. No seaborn." },
+  { id: "9D8a5W343zU", ptr: "libraries", tag: "short", sec: 57, dur: "0:57", title: "What is NumPy?", channel: "Darcy DeClute", note: "A one-minute NumPy reminder (arrays under scikit-learn).", watched: true, when: "17–18 Nov", shorts: true },
+  { id: "EzgmPY2FiMQ", ptr: "libraries", tag: "short", sec: 79, dur: "1:19", title: "What Is Pandas | Pandas Tutorial For Beginners | Pandas In Python Explained", channel: "Simplilearn", note: "What Pandas is for: tables and DataFrames.", watched: true, when: "17–18 Nov", shorts: true },
 
-  { id: "Kdsp6soqA7o", ptr: "confusion", tag: "detailed", sec: 432, dur: "7:12", title: "Machine Learning Fundamentals: The Confusion Matrix", channel: "StatQuest with Josh Starmer", note: "TP, FP, FN and TN, and how two models can be compared with a matrix.", watched: true },
-  { id: "sR27wVmrMf8", ptr: "confusion", tag: "short", sec: 89, dur: "1:29", title: "Precision, recall and the confusion matrix", channel: "learningfrommachine", note: "Precision, recall and how they come from the confusion matrix.", watched: true, recent: true },
+  { id: "Kdsp6soqA7o", ptr: "confusion", tag: "detailed", sec: 432, dur: "7:12", title: "Machine Learning Fundamentals: The Confusion Matrix", channel: "StatQuest with Josh Starmer", note: "TP, FP, FN and TN, and how two models can be compared with a matrix.", watched: true, when: "17–18 Nov" },
+  { id: "sR27wVmrMf8", ptr: "confusion", tag: "short", sec: 89, dur: "1:29", title: "Precision, recall and the confusion matrix", channel: "learningfrommachine", note: "Precision, recall and how they come from the confusion matrix.", watched: true, recent: true, when: "17–18 Nov" },
   { id: "xLubHw26LQ0", ptr: "confusion", tag: "short", sec: 10, dur: "0:10", title: "What Is a Confusion Matrix?", channel: "Cloud2BR", note: "A ten-second reminder of what the matrix is.", watched: true, shorts: true },
 
   { id: "94f_bId5HGI", ptr: "scaling", tag: "detailed", sec: 425, dur: "7:05", title: "Using Min Max Scaler to scale features | Machine Learning", channel: "Rachit Toshniwal", note: "MinMaxScaler: how min and max map a feature into a 0–1 range. Fit on the train set only.", watched: true, recent: true },
@@ -2314,19 +2316,29 @@ const VIDEOS = [
   { id: "iEQ0e-WLgkQ", ptr: "svm", tag: "detailed", sec: 486, dur: "8:06", title: "Support Vector Machines : Data Science Concepts", channel: "ritvikmath", note: "Hyperplane, margin and support vectors." },
   { id: "_YPScrckx28", ptr: "svm", tag: "short", sec: 139, dur: "2:19", title: "Support Vector Machine (SVM) in 2 minutes", channel: "Visually Explained", note: "The wide-margin idea, quickly." },
   { id: "Q7vT0--5VII", ptr: "svm", tag: "short", sec: 198, dur: "3:18", title: "The Kernel Trick in Support Vector Machine (SVM)", channel: "Visually Explained", note: "The kernel trick, and why RBF can help with non-linear data." },
+  { id: "CIOhbiB_chQ", ptr: "svm", tag: "short", sec: 55, dur: "0:55", title: "What is SVM? Support Vector Machine Explained for Beginners", channel: "SmartSlides", note: "Hyperplane, margin and support vectors, in under a minute.", watched: true, when: "17–18 Nov", shorts: true },
 
   { id: "HVXime0nQeI", ptr: "knn", tag: "detailed", sec: 330, dur: "5:30", title: "StatQuest: K-nearest neighbors, Clearly Explained", channel: "StatQuest with Josh Starmer", note: "A lazy learner: distance, a majority vote, and choosing k. Scale first." },
   { id: "jJJXfvrIpsE", ptr: "knn", tag: "short", sec: 41, dur: "0:41", title: "K-Nearest Neighbors Explained: The Laziest ML Algorithm (ML Interview Question) #shorts", channel: "ML Decoded", note: "k-NN as a lazy, vote-based classifier.", watched: true, recent: true, shorts: true },
 
   { id: "4b5d3muPQmA", ptr: "kmeans", tag: "detailed", sec: 510, dur: "8:30", title: "StatQuest: K-means clustering", channel: "StatQuest with Josh Starmer", note: "Choose k, place centroids, assign, update, repeat. Scale first." },
   { id: "R2e3Ls9H_fc", ptr: "kmeans", tag: "short", sec: 209, dur: "3:29", title: "K-Means Clustering Explanation and Visualization", channel: "TheDataPost", note: "The k-means loop, visualised, in a few minutes." },
+  { id: "3VFgH6LrSaI", ptr: "kmeans", tag: "short", sec: 60, dur: "1:00", title: "Hierarchical Clustering vs K-Means | Machine Learning for Beginners | Episode 31", channel: "Veedia", note: "How hierarchical clustering differs from k-Means. Also listed under P12.", watched: true, when: "17–18 Nov", shorts: true, also: ["hier"] },
 
   { id: "wW1tgWtkj4I", ptr: "elbow", tag: "detailed", sec: 584, dur: "9:44", title: "Elbow Method | Silhouette Coefficient Method in K Means Clustering Solved Example by Mahesh Huddar", channel: "Mahesh Huddar", note: "A worked elbow (inertia vs k) and silhouette example. Pick the k at the elbow, or the highest silhouette (k ≥ 2)." },
   { id: "n2FkCVxXIT4", ptr: "elbow", tag: "short", sec: 178, dur: "2:58", title: "How to Choose K in K-Means (Elbow Method + Silhouette Score)", channel: "John Eidenham", note: "Elbow and silhouette, side by side, in three minutes." },
+  { id: "hI67en4rfqg", ptr: "elbow", tag: "short", sec: 23, dur: "0:23", title: "Stop guessing K in K-Means! 📐 (The Elbow Method Explained) #Shorts", channel: "B_Mverse", note: "Plot inertia vs k and pick the bend — the elbow.", shorts: true },
+  { id: "Cg7d8TX7NXg", ptr: "elbow", tag: "short", sec: 24, dur: "0:24", title: "The Elbow Method Explained in 60 Seconds", channel: "BookNaja", note: "A one-minute elbow-method recap.", shorts: true },
+  { id: "Vca8wo63CTw", ptr: "elbow", tag: "short", sec: 42, dur: "0:42", title: "Silhouette Score explained in 60 seconds", channel: "BookNaja", note: "Silhouette ranges from −1 to 1; pick the k with the highest score.", shorts: true },
+  { id: "TRAo14qvL5o", ptr: "elbow", tag: "short", sec: 66, dur: "1:06", title: "What is Silhouette Score?", channel: "Need to Know AI", note: "What the silhouette score is measuring when you choose k.", shorts: true },
 
   { id: "7xHsRkOdVwo", ptr: "hier", tag: "detailed", sec: 679, dur: "11:19", title: "StatQuest: Hierarchical Clustering", channel: "StatQuest with Josh Starmer", note: "Agglomerative clustering and how a dendrogram is built." },
   { id: "RDZUdRSDOok", ptr: "hier", tag: "detailed", sec: 569, dur: "9:29", title: "Clustering with DBSCAN, Clearly Explained!!!", channel: "StatQuest with Josh Starmer", note: "eps, min_samples, dense regions, and the noise label -1. No k needed." },
   { id: "WoR_crzMAhQ", ptr: "hier", tag: "short", sec: 160, dur: "2:40", title: "DBSCAN - Explained", channel: "DataMListic", note: "DBSCAN's core idea in under three minutes." },
+  { id: "fCGzTedpWbo", ptr: "hier", tag: "short", sec: 26, dur: "0:26", title: "Hierarchical Clustering Simply Explained", channel: "codehubgenius", note: "The agglomerative idea, quickly.", watched: true, when: "17–18 Nov", shorts: true },
+  { id: "x9Ji30CaZWY", ptr: "hier", tag: "short", sec: 60, dur: "1:00", title: "Peter explains Hierarchical Clustering Algorithm In Machine Learning | Hierarchical Clustering #ml", channel: "Random Useful Websites", note: "How hierarchical clustering builds a dendrogram.", watched: true, when: "17–18 Nov", shorts: true },
+  { id: "_iUl81_2BmQ", ptr: "hier", tag: "short", sec: 35, dur: "0:35", title: "Clustering with DBSCAN simply Explained", channel: "codehubgenius", note: "DBSCAN: eps, min_samples, and the noise label. No k needed.", shorts: true },
+  { id: "-utZFALrvmc", ptr: "hier", tag: "short", sec: 51, dur: "0:51", title: "DBSCAN Explained: Clustering Without Saying How Many Groups #shorts", channel: "Architecting Intelligence", note: "DBSCAN finds dense groups without you choosing k first.", shorts: true },
 
   { id: "lKnjAMOov7E", ptr: "poly", tag: "detailed", sec: 633, dur: "10:33", title: "Scikit-Learn: Polynomial Regression", channel: "Engineering Educator Academy", note: "PolynomialFeatures with LinearRegression in scikit-learn. Then practise the exam pattern in the lab: train_test_split, make_pipeline, fit, predict, r2_score." },
   { id: "S36ngzmZqd0", ptr: "poly", tag: "detailed", sec: 357, dur: "5:57", title: "PolynomialFeatures", channel: "Christopher Davis, UC Irvine", note: "What PolynomialFeatures actually adds to X." },
@@ -2339,8 +2351,8 @@ const VIDEOS = [
   { id: "BfBcsBaasG0", ptr: "calc", tag: "detailed", sec: 561, dur: "9:21", title: "Regression vs Classification vs Clustering | Machine Learning Explained for Beginners", channel: "Hire Ready", note: "Regression vs classification vs clustering: predict a number, a class, or a group (labelled vs unlabelled)." },
   { id: "DZw1xnyHbVc", ptr: "calc", tag: "short", sec: 112, dur: "1:52", title: "Supervised vs Unsupervised vs Reinforcement Learning", channel: "Analytics Vidhya", note: "Supervised vs unsupervised. Reinforcement is not on this paper — you can skip that part.", watched: true },
   { id: "Vm7_qEt6t40", ptr: "calc", tag: "short", sec: 98, dur: "1:38", title: "Unsupervised Machine Learning 🤖 | Algorithms & Categories #machinelearning", channel: "TechPulse Daily", note: "A short map of unsupervised types. Focus on clustering for this paper.", watched: true },
-  { id: "s0uOaVLgGT8", ptr: "calc", tag: "short", sec: 94, dur: "1:34", title: "Euclidean Distance Explained: How AI Measures Similarity! 🤯 #euclideandistance #machinelearning", channel: "Raghav", note: "Euclidean distance: the formula you will compute on paper for k-NN.", watched: true, recent: true, shorts: true },
-  { id: "j33ezZC0m_k", ptr: "calc", tag: "short", sec: 18, dur: "0:18", title: "Euclidean distance #ai #machinelearning #euclidean", channel: "Helia and Lucky", note: "A very short Euclidean-distance reminder.", watched: true, recent: true, shorts: true }
+  { id: "s0uOaVLgGT8", ptr: "calc", tag: "short", sec: 94, dur: "1:34", title: "Euclidean Distance Explained: How AI Measures Similarity! 🤯 #euclideandistance #machinelearning", channel: "Raghav", note: "Euclidean distance: the formula you will compute on paper for k-NN.", watched: true, recent: true, when: "17–18 Nov", shorts: true, also: ["knn"] },
+  { id: "j33ezZC0m_k", ptr: "calc", tag: "short", sec: 18, dur: "0:18", title: "Euclidean distance #ai #machinelearning #euclidean", channel: "Helia and Lucky", note: "A very short Euclidean-distance reminder.", watched: true, recent: true, when: "17–18 Nov", shorts: true, also: ["knn"] }
 ];
 VIDEOS.forEach(v => { if (v.kind !== "celeste") v.url = v.shorts ? ytShort(v.id) : ytWatch(v.id); });
 
@@ -2362,7 +2374,7 @@ const WATCH_DOCS = {
   calc: [{ title: "Model evaluation metrics (sklearn)", url: "https://scikit-learn.org/stable/modules/model_evaluation.html", len: "docs", note: "Work accuracy, precision, recall, F1, residuals and R² on paper first, then check the formula in the docs." }]
 };
 
-const vidsOf = ptr => VIDEOS.filter(v => v.ptr === ptr);
+const vidsOf = ptr => VIDEOS.filter(v => v.ptr === ptr || (v.also && v.also.indexOf(ptr) >= 0));
 const vidWatched = id => !!(S.watched && S.watched[id]);
 const vidMark = (id, on) => { S.watched = S.watched || {}; if (on) S.watched[id] = true; else delete S.watched[id]; save(); };
 const vidStats = () => { const n = VIDEOS.length, w = VIDEOS.filter(v => vidWatched(v.id)).length; return { n, w }; };
@@ -2370,7 +2382,8 @@ function fmtChapter(t) { return Math.floor(t / 60) + ":" + String(t % 60).padSta
 
 function vidBadge(v) {
   if (!v.watched) return "";
-  return v.recent ? `<span class="vidbadge recent">You watched · 16 Nov</span>` : `<span class="vidbadge">You watched</span>`;
+  const when = v.when || (v.recent ? "16 Nov" : "");
+  return when ? `<span class="vidbadge recent">You watched · ${esc(when)}</span>` : `<span class="vidbadge">You watched</span>`;
 }
 function vidCheck(v) {
   return `<label class="vidck"><input type="checkbox" data-fx="vidwatched" data-vid="${esc(v.id)}" ${vidWatched(v.id) ? "checked" : ""}> Watched</label>`;
@@ -2431,7 +2444,7 @@ function videosPage() {
     ${vidsOf("intro").map(vidCard).join("")}</section>`;
   const ptrs = PTRS.map(([id, name]) => `<section class="vidsec" id="vid-ptr-${id}"><h2>${esc(name)}</h2>${vidsOf(id).map(vidCard).join("")}</section>`).join("");
   return `<h1>▶️ Videos</h1><span class="scope">Organised by the 15 exam pointers. Every YouTube link was checked. Nothing here is over 15 minutes.</span>
-    <div class="note">Tick <b>Watched</b> when you finish a video. That tick is saved on this device and is included in <b>Download sync file</b>. A <b>You watched</b> badge means it was already in your YouTube history (a <b>16 Nov</b> badge is a recent watch). The badge is just a reminder — tick the box yourself if you want it in your lab progress.</div>
+    <div class="note">Tick <b>Watched</b> when you finish a video. That tick is saved on this device and is included in <b>Download sync file</b>. A <b>You watched</b> badge means it was already in your YouTube history (a date such as <b>17–18 Nov</b> or <b>16 Nov</b> is a recent watch). The badge is just a reminder — tick the box yourself if you want it in your lab progress.</div>
     <p class="muted" id="vidCount">Ticked ${st.w} of ${st.n} on this device.</p>
     <nav class="vidjump" aria-label="Jump to a pointer">${jumps}</nav>
     ${celeste}${intro}${ptrs}
@@ -2903,7 +2916,69 @@ const FILLINS = [
     fillans:["15","16","15"],
     expect:{"prec":0.75,"rec":0.80,"acc":10/15},
     why:"Precision 0.75, recall 0.80, accuracy 2/3. Always: formula, substitution, value, why.",
-    py:true}
+    py:true},
+  {id:"fi-p2-lq2", sec:"confusion", ptr:"P2", tag:"P2 · LongQ Q2",
+    title:"LongQ Q2 given matrix",
+    lead:"LongQuestions_1 Q2 printed matrix [[70, 10], [15, 25]] as TN, FP, FN, TP. Fill accuracy, precision and recall (decimals as given in the memo).",
+    code:"TN, FP, FN, TP = 70, 10, 15, 25\nn = TN + FP + FN + TP\nacc = (TP + TN) / n\nprec = TP / (TP + FP)\nrec = TP / (TP + FN)\nprint(acc, prec, rec)",
+    starter:"TN, FP, FN, TP = 70, 10, 15, 25\nn = ___\nacc = (TP + TN) / n\nprec = TP / (TP + ___)\nrec = TP / (TP + ___)\nprint(acc, prec, rec)",
+    fillans:["TN + FP + FN + TP","FP","FN"],
+    also:[["120"],["10"],["15"]],
+    expect:{"acc":0.7916666666666666,"prec":0.7142857142857143,"rec":0.625},
+    why:"n=120. Accuracy=95/120=0.7917. Precision=25/35≈0.714. Recall=25/40=0.625. F1=2/3 exactly. Part f: missed high-risk is a false negative, so watch recall.",
+    py:true},
+  {id:"fi-p5-prep3", sec:"linreg", ptr:"P5", tag:"P5 · prep3 · PQ Q8",
+    title:"y = 4x + 12 at x = 5",
+    lead:"prep3: y = 4x + 12. Slope, intercept, and the prediction when x = 5.",
+    code:"m, c, x = 4, 12, 5\ny = m * x + c\nprint(y)",
+    starter:"m, c, x = ___, 12, 5\ny = m * x + c\nprint(y)",
+    fillans:["4"],
+    expect:{"y":32},
+    why:"Slope is 4 (for every 1 unit of x, y rises by 4). Intercept is 12. When x=5, y=4×5+12=32.",
+    py:true},
+  {id:"fi-p7-pq12", sec:"fit", ptr:"P7", tag:"P7 · PQ Q12",
+    title:"Which model generalises?",
+    lead:"PracticeQuestions Q12. Fill overfit, underfit, and best-generalising (A, B or C).",
+    code:"# A 0.98 / 0.55   B 0.85 / 0.82   C 0.46 / 0.42\noverfit = \"___\"\nunderfit = \"___\"\nbest = \"___\"",
+    ans:["A","C","B"],
+    why:"A has a large train–test gap (overfit, high variance). C is low on both (underfit, high bias). B 0.85/0.82 generalises best.",
+    py:false},
+  {id:"fi-p8-lq3", sec:"svm", ptr:"P8", tag:"P8 · LongQ Q3 f–h",
+    title:"SVM 0.91 vs logistic 0.83",
+    lead:"LongQ Q3 given test accuracies. Which is higher on this test set, and does that automatically prove it is best to deploy?",
+    code:"higher_on_this_test = \"___\"\nauto_best_to_deploy = \"___\"",
+    ans:["SVM","no"],
+    why:"0.91 > 0.83 on this test set, so SVM scored higher here. Accuracy alone is not enough to deploy: you may still need precision, recall, F1, the confusion matrix and the business context.",
+    py:false},
+  {id:"fi-p9-k", sec:"knn", ptr:"P9", tag:"P9 · prep6",
+    title:"Small k vs large k",
+    lead:"prep6: after a majority vote, what happens at k=1 versus a very large k?",
+    code:"k1_risk = \"___\"\nlarge_k_risk = \"___\"",
+    ans:["overfitting","underfitting"],
+    also:[["overfit","high variance","noise"],["underfit","high bias","majority class"]],
+    why:"k=1 is sensitive to noise (high variance / overfit). A very large k smooths toward the majority class (high bias / underfit). Odd k avoids ties in binary voting.",
+    py:false},
+  {id:"fi-p11-pq10", sec:"elbow", ptr:"P11", tag:"P11 · PQ Q10",
+    title:"Choose k from silhouette scores",
+    lead:"PracticeQuestions Q10: k=2 → 0.45, k=3 → 0.68, k=4 → 0.57, k=5 → 0.49.",
+    code:"best_k = ___\nreason = \"highest silhouette\"",
+    ans:["3"],
+    why:"Pick the k with the highest silhouette (k ≥ 2). 0.68 at k=3 is the highest of the four given scores.",
+    py:false},
+  {id:"fi-p12-agg", sec:"hier", ptr:"P12", tag:"P12 · prep8",
+    title:"Agglomerative or divisive?",
+    lead:"prep8 dendrogram question. Bottom-up merging vs top-down splitting.",
+    code:"bottom_up = \"___\"\ntop_down = \"___\"\nnoise_label_in_dbscan = ___",
+    ans:["agglomerative","divisive","-1"],
+    why:"Agglomerative starts with each point alone and merges. Divisive starts with one cluster and splits. DBSCAN labels noise as -1; it needs eps and min_samples, not k. Official example: DBSCAN(eps=0.5, min_samples=5).",
+    py:false},
+  {id:"fi-p15-board98", sec:"calc", ptr:"P15", tag:"P15 · 5 Nov board",
+    title:"98% accuracy, 0% recall",
+    lead:"Board warning: a model can show high accuracy and still miss the positive class completely.",
+    code:"# Always-predict-negative on a rare positive class\naccuracy_can_be_high = True\nrecall_if_no_TP = ___",
+    ans:["0"],
+    why:"If TP=0, recall = 0/(0+FN) = 0. Accuracy can still look high when the negative class is common. That is why the board also tracks precision, recall and stratify=y.",
+    py:false}
 ];
 
 function fiNorm(s) {
@@ -4340,7 +4415,8 @@ function pagePointer(id) {
     return `<li>Video: <b>${esc(v.title || v.id)}</b>${watched} · <a href="#/videos">Open on the Videos tab</a></li>`;
   }).join("")}</ul>` : "";
   const ch = celesteChapterButtons(p.id, p.sec) || `<p class="muted">Chapter buttons for Celeste's walkthroughs are on the <a href="#/videos">Videos tab</a>.</p>`;
-  return `<h1>${p.id} · ${esc(p.title)}</h1><span class="scope">Exact locations in every source we have, plus your progress on this pointer.</span>${mapJump(p.id)}${mapChips(p)}${srcList(p)}
+  const sgBox = p.sg ? `<div class="note sgpages"><b>Study guide pages.</b> ${esc(p.sg)}</div>` : "";
+  return `<h1>${p.id} · ${esc(p.title)}</h1><span class="scope">Exact locations in every source we have, plus your progress on this pointer.</span>${mapJump(p.id)}${mapChips(p)}${sgBox}${srcList(p)}
     ${reelStrip(p.id)}
     <h3>Videos and walkthrough chapters</h3>${ytList}${ch}
     <div class="maplinks"><a href="#/${p.sec}">Open the lab section</a><a href="#/mix/${p.id}">Use-all-sources quiz</a><a href="#/reels/${p.id}">Reels feed</a><a href="#/videos">Videos tab</a><a href="#/cheatsheet">Cheatsheet</a><a href="#/map">All pointers</a></div>`;
@@ -4348,10 +4424,10 @@ function pagePointer(id) {
 
 
 const REEL_CLIPS = [
-  {id:"9D8a5W343zU", ptr:"P1", plat:"yt", title:"What is NumPy?", creator:"Darcy DeClute", dur:"0:57", sec:57, url:"https://www.youtube.com/shorts/9D8a5W343zU"},
-  {id:"EzgmPY2FiMQ", ptr:"P1", plat:"yt", title:"What Is Pandas | Pandas Tutorial For Beginners | Pandas In Python Explained", creator:"Simplilearn", dur:"1:19", sec:79, url:"https://www.youtube.com/shorts/EzgmPY2FiMQ"},
+  {id:"9D8a5W343zU", ptr:"P1", plat:"yt", title:"What is NumPy?", creator:"Darcy DeClute", dur:"0:57", sec:57, url:"https://www.youtube.com/shorts/9D8a5W343zU", watched:true, when:"17–18 Nov"},
+  {id:"EzgmPY2FiMQ", ptr:"P1", plat:"yt", title:"What Is Pandas | Pandas Tutorial For Beginners | Pandas In Python Explained", creator:"Simplilearn", dur:"1:19", sec:79, url:"https://www.youtube.com/shorts/EzgmPY2FiMQ", watched:true, when:"17–18 Nov"},
   {id:"ig-DDy9TqyM12W", ptr:"P1", plat:"ig", title:"What is Scikit-Learn?", creator:"bot_campus_ai", url:"https://www.instagram.com/reel/DDy9TqyM12W/"},
-  {id:"sR27wVmrMf8", ptr:"P2", plat:"yt", title:"Precision, recall and the confusion matrix", creator:"learningfrommachine", dur:"1:29", sec:89, url:"https://www.youtube.com/shorts/sR27wVmrMf8", watched:true, recent:true},
+  {id:"sR27wVmrMf8", ptr:"P2", plat:"yt", title:"Precision, recall and the confusion matrix", creator:"learningfrommachine", dur:"1:29", sec:89, url:"https://www.youtube.com/shorts/sR27wVmrMf8", watched:true, recent:true, when:"17–18 Nov"},
   {id:"xLubHw26LQ0", ptr:"P2", plat:"yt", title:"What Is a Confusion Matrix?", creator:"Cloud2BR", dur:"0:10", sec:10, url:"https://www.youtube.com/shorts/xLubHw26LQ0", watched:true},
   {id:"aBi8q8D0epE", ptr:"P3", plat:"yt", title:"When to Use Min-Max Scaling", creator:"The NextGen Ai Frontier", dur:"0:36", sec:36, url:"https://www.youtube.com/shorts/aBi8q8D0epE", watched:true, recent:true},
   {id:"oXT7mxbGBEM", ptr:"P3", plat:"yt", title:"Min-Max Normalization (scaling) explained", creator:"CreasyML", dur:"0:39", sec:39, url:"https://www.youtube.com/shorts/oXT7mxbGBEM", watched:true, recent:true},
@@ -4363,7 +4439,7 @@ const REEL_CLIPS = [
   {id:"5OZVVIcV6og", ptr:"P6", plat:"yt", title:"LEARN LOGISTIC REGRESSION in MINUTES", creator:"DataCamp", dur:"0:39", sec:39, url:"https://www.youtube.com/shorts/5OZVVIcV6og"},
   {id:"ig-DLRxmWaIAJ0", ptr:"P7", plat:"ig", title:"Overfitting vs Underfitting: What's the difference?", creator:"matlab", url:"https://www.instagram.com/reel/DLRxmWaIAJ0/"},
   {id:"GBK3XVkUiAs", ptr:"P7", plat:"yt", title:"Underfitting vs Overfitting: The 2 Biggest Problems in AI (Explained)", creator:"SAI Data Science", dur:"3:00", sec:180, url:"https://www.youtube.com/shorts/GBK3XVkUiAs"},
-  {id:"CIOhbiB_chQ", ptr:"P8", plat:"yt", title:"What is SVM? Support Vector Machine Explained for Beginners", creator:"SmartSlides", dur:"0:55", sec:55, url:"https://www.youtube.com/shorts/CIOhbiB_chQ"},
+  {id:"CIOhbiB_chQ", ptr:"P8", plat:"yt", title:"What is SVM? Support Vector Machine Explained for Beginners", creator:"SmartSlides", dur:"0:55", sec:55, url:"https://www.youtube.com/shorts/CIOhbiB_chQ", watched:true, when:"17–18 Nov"},
   {id:"inbfWaIxEwA", ptr:"P8", plat:"yt", title:"What is a KERNEL in Data Science? Example SVC", creator:"Discover AI", dur:"0:59", sec:59, url:"https://www.youtube.com/shorts/inbfWaIxEwA"},
   {id:"xnGgwpmIfn8", ptr:"P8", plat:"yt", title:"Logistic Regression vs SVM", creator:"Stat Forge", dur:"1:32", sec:92, url:"https://www.youtube.com/shorts/xnGgwpmIfn8"},
   {id:"jJJXfvrIpsE", ptr:"P9", plat:"yt", title:"K-Nearest Neighbors Explained: The Laziest ML Algorithm (ML Interview Question)", creator:"ML Decoded", dur:"0:41", sec:41, url:"https://www.youtube.com/shorts/jJJXfvrIpsE", watched:true, recent:true},
@@ -4372,15 +4448,28 @@ const REEL_CLIPS = [
   {id:"tt-7632375081632533791", ptr:"P11", plat:"tt", title:"K-Means Clustering: Elbow Method & Silhouette Score Explained", creator:"lerabyte", url:"https://www.tiktok.com/@lerabyte/video/7632375081632533791", vid:"7632375081632533791"},
   {id:"iscXti37dJs", ptr:"P12", plat:"yt", title:"hierarchical Clustering", creator:"AIMIKO", dur:"0:57", sec:57, url:"https://www.youtube.com/shorts/iscXti37dJs"},
   {id:"ROMBjkh6u1s", ptr:"P12", plat:"yt", title:"Clustering Techniques KMeans vs DBScan Python Tutorial", creator:"DATAJARVIS", dur:"2:56", sec:176, url:"https://www.youtube.com/shorts/ROMBjkh6u1s"},
-  {id:"K5rf_4mXO3A", ptr:"P13", plat:"yt", title:"What is Polynomial Regression", creator:"No Code", dur:"1:10", sec:70, url:"https://www.youtube.com/shorts/K5rf_4mXO3A", watched:true},
+  {id:"3VFgH6LrSaI", ptr:"P12", plat:"yt", title:"Hierarchical Clustering vs K-Means | Machine Learning for Beginners | Episode 31", creator:"Veedia", dur:"1:00", sec:60, url:"https://www.youtube.com/shorts/3VFgH6LrSaI", watched:true, when:"17–18 Nov", also:["P10"]},
+  {id:"fCGzTedpWbo", ptr:"P12", plat:"yt", title:"Hierarchical Clustering Simply Explained", creator:"codehubgenius", dur:"0:26", sec:26, url:"https://www.youtube.com/shorts/fCGzTedpWbo", watched:true, when:"17–18 Nov"},
+  {id:"x9Ji30CaZWY", ptr:"P12", plat:"yt", title:"Peter explains Hierarchical Clustering Algorithm In Machine Learning | Hierarchical Clustering #ml", creator:"Random Useful Websites", dur:"1:00", sec:60, url:"https://www.youtube.com/shorts/x9Ji30CaZWY", watched:true, when:"17–18 Nov"},
+  {id:"_iUl81_2BmQ", ptr:"P12", plat:"yt", title:"Clustering with DBSCAN simply Explained", creator:"codehubgenius", dur:"0:35", sec:35, url:"https://www.youtube.com/shorts/_iUl81_2BmQ"},
+  {id:"-utZFALrvmc", ptr:"P12", plat:"yt", title:"DBSCAN Explained: Clustering Without Saying How Many Groups", creator:"Architecting Intelligence", dur:"0:51", sec:51, url:"https://www.youtube.com/shorts/-utZFALrvmc"},
+  {id:"hI67en4rfqg", ptr:"P11", plat:"yt", title:"Stop guessing K in K-Means! (The Elbow Method Explained)", creator:"B_Mverse", dur:"0:23", sec:23, url:"https://www.youtube.com/shorts/hI67en4rfqg"},
+  {id:"Cg7d8TX7NXg", ptr:"P11", plat:"yt", title:"The Elbow Method Explained in 60 Seconds", creator:"BookNaja", dur:"0:24", sec:24, url:"https://www.youtube.com/shorts/Cg7d8TX7NXg"},
+  {id:"Vca8wo63CTw", ptr:"P11", plat:"yt", title:"Silhouette Score explained in 60 seconds", creator:"BookNaja", dur:"0:42", sec:42, url:"https://www.youtube.com/shorts/Vca8wo63CTw"},
+  {id:"TRAo14qvL5o", ptr:"P11", plat:"yt", title:"What is Silhouette Score?", creator:"Need to Know AI", dur:"1:06", sec:66, url:"https://www.youtube.com/shorts/TRAo14qvL5o"},
+    {id:"K5rf_4mXO3A", ptr:"P13", plat:"yt", title:"What is Polynomial Regression", creator:"No Code", dur:"1:10", sec:70, url:"https://www.youtube.com/shorts/K5rf_4mXO3A", watched:true},
   {id:"4pKmWqhkD-o", ptr:"P14", plat:"yt", title:"What is R-squared in Regression? | Coefficient of Determination | Linear Regression Basics", creator:"SCALER", dur:"1:00", sec:60, url:"https://www.youtube.com/shorts/4pKmWqhkD-o"},
-  {id:"j33ezZC0m_k", ptr:"P15", plat:"yt", title:"Euclidean distance", creator:"Helia and Lucky", dur:"0:18", sec:18, url:"https://www.youtube.com/shorts/j33ezZC0m_k", watched:true, recent:true},
-  {id:"s0uOaVLgGT8", ptr:"P15", plat:"yt", title:"Euclidean Distance Explained: How AI Measures Similarity!", creator:"Raghav", dur:"1:34", sec:94, url:"https://www.youtube.com/shorts/s0uOaVLgGT8", watched:true, recent:true}
+  {id:"j33ezZC0m_k", ptr:"P15", plat:"yt", title:"Euclidean distance", creator:"Helia and Lucky", dur:"0:18", sec:18, url:"https://www.youtube.com/shorts/j33ezZC0m_k", watched:true, recent:true, when:"17–18 Nov", also:["P9"]},
+  {id:"s0uOaVLgGT8", ptr:"P15", plat:"yt", title:"Euclidean Distance Explained: How AI Measures Similarity!", creator:"Raghav", dur:"1:34", sec:94, url:"https://www.youtube.com/shorts/s0uOaVLgGT8", watched:true, recent:true, when:"17–18 Nov", also:["P9"]}
 ];
 
 let reelIdx = 0, reelTouchY = null;
 const PLAT_LABEL = {yt:"YouTube Short", tt:"TikTok", ig:"Instagram Reel", fb:"Facebook Reel"};
-function reelAt(id) { const i = REEL_CLIPS.findIndex(c => c.ptr === id || c.id === id); return i < 0 ? 0 : i; }
+function reelMatches(c, ptr) {
+  if (!ptr) return true;
+  return c.ptr === ptr || (c.also && c.also.indexOf(ptr) >= 0);
+}
+function reelAt(id) { const i = REEL_CLIPS.findIndex(c => c.id === id || reelMatches(c, id)); return i < 0 ? 0 : i; }
 function reelCap(ptr) { return REELS.find(r => r.id === ptr) || null; }
 function reelPlayer(c, opts) {
   opts = opts || {};
@@ -4404,9 +4493,9 @@ function reelPlayer(c, opts) {
     <button type="button" class="sec" data-fx="reelopen" data-url="${esc(c.url)}" data-name="${esc(name)}">Open on ${name} (leaves this lab)</button></div>`;
 }
 function reelBadge(c) {
-  if (c.recent) return `<span class="vidbadge recent">You watched · 16 Nov</span>`;
-  if (c.watched) return `<span class="vidbadge">You watched</span>`;
-  return "";
+  if (!c.watched && !c.recent && !c.when) return "";
+  const when = c.when || (c.recent ? "16 Nov" : "");
+  return when ? `<span class="vidbadge recent">You watched · ${esc(when)}</span>` : `<span class="vidbadge">You watched</span>`;
 }
 function reelSlide(c, i, active) {
   const p = MAP_BY[c.ptr], cap = reelCap(c.ptr);
@@ -4427,11 +4516,11 @@ function reelSlide(c, i, active) {
   </article>`;
 }
 function reelStrip(ptr) {
-  const clips = REEL_CLIPS.filter(c => c.ptr === ptr);
+  const clips = REEL_CLIPS.filter(c => reelMatches(c, ptr));
   if (!clips.length) return "";
   return `<div class="reel-strip"><h3>Reels for ${esc(ptr)}</h3>
     <p class="muted">The same short clips as the <a href="#/reels/${esc(ptr)}">Reels feed</a>, parked on this pointer. YouTube uses a no-cookie player with related videos off. Instagram is a still card with a warning, not a feed.</p>
-    <div class="reel-strip-row">${clips.map((c, i) => `<div class="reel-strip-item">${reelPlayer(c, { active: false, lazy: true })}${c.plat === "yt" || c.plat === "tt" ? `<button type="button" class="sec" data-fx="stripload" data-ptr="${esc(ptr)}" data-i="${i}">Play here</button>` : ""}<p class="muted">${esc(c.title)} · ${esc(c.creator)}</p></div>`).join("")}</div></div>`;
+    <div class="reel-strip-row">${clips.map((c, i) => `<div class="reel-strip-item">${reelPlayer(c, { active: false, lazy: true })}${c.plat === "yt" || c.plat === "tt" ? `<button type="button" class="sec" data-fx="stripload" data-ptr="${esc(ptr)}" data-i="${i}">Play here</button>` : ""}<p class="muted">${esc(c.title)} · ${esc(c.creator)} ${reelBadge(c)}</p></div>`).join("")}</div></div>`;
 }
 function reelStripForSec(s) {
   const p = MAP.find(x => x.sec === s.id);
@@ -4658,142 +4747,379 @@ if (FX.pages.resources && FX.pages.resources.html) {
 
 window.__V3.map = { MAP, REELS, REEL_CLIPS, MIXQ, MIX_ALL, mixNumOk, LINK_VAIA_SET, LINK_NB_SET };
 
-/* ===== v3 · part 11: same-origin self-update on rawcdn.githack (keeps progress) ===== */
-const UPD_REPO = "Shiv0130/ml600-practice-lab";
-const UPD_HOST = "rawcdn.githack.com";
-const UPD_TTL = 5 * 60 * 1000;
-const UPD_LS = "ml600lab.updateCache";
-const UPD_REDIR = "ml600lab.updateRedirected";
-const UPD_TOAST = "ml600lab.justUpdated";
+/* ===== v3 · part 99: Flow-through LongQuestions + PracticeQuestions ===== */
+/* Official wording only. #TODO pages at #/longq stay unchanged. */
+(function () {
+  const LQ1 = `import pandas as pd
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.linear_model import LinearRegression
+from sklearn.pipeline import make_pipeline
+from sklearn.metrics import r2_score
 
-function updShasEqual(a, b) {
-  if (!a || !b) return false;
-  const x = String(a).toLowerCase(), y = String(b).toLowerCase();
-  return x === y || x.startsWith(y) || y.startsWith(x);
+data = {
+    "HouseSize": [50, 60, 70, 80, 90, 100, 110, 120, 130, 140],
+    "HousePrice": [450000, 520000, 600000, 700000, 820000,
+                   970000, 1150000, 1360000, 1600000, 1880000]
 }
-function updDecide(p) {
-  const ownId = p && p.ownId, remoteId = p && p.remoteId, latestSha = p && p.latestSha, currentSha = p && p.currentSha;
-  if (!ownId || !remoteId || ownId === remoteId) return { action: "stay" };
-  if (p && p.alreadyRedirectedFor === ownId) return { action: "stop" };
-  if (!latestSha || !/^[0-9a-f]{7,40}$/i.test(latestSha)) return { action: "stay" };
-  if (currentSha && updShasEqual(latestSha, currentSha)) return { action: "stay" };
-  return { action: "redirect", sha: latestSha };
-}
-function updCurrentSha(pathname) {
-  const m = String(pathname || "").match(/\/Shiv0130\/ml600-practice-lab\/([0-9a-f]{7,40})\//i);
-  return m ? m[1] : null;
-}
-function updDest(sha, hash) {
-  return "https://" + UPD_HOST + "/" + UPD_REPO + "/" + sha + "/index.html" + (hash || "");
-}
-function updCacheGet() {
-  try {
-    const o = JSON.parse(localStorage.getItem(UPD_LS) || "null");
-    if (o && o.ts && (Date.now() - o.ts) < UPD_TTL) return o;
-  } catch (e) {}
-  return null;
-}
-function updCacheSet(o) {
-  try { localStorage.setItem(UPD_LS, JSON.stringify(Object.assign({}, o, { ts: Date.now() }))); } catch (e) {}
-}
-function updShouldRun() {
-  if (typeof window !== "undefined" && window.__UPD_FORCE) return true;
-  return location.hostname === UPD_HOST;
-}
-function updShowToast() {
-  try {
-    if (sessionStorage.getItem(UPD_TOAST) === "1") {
-      sessionStorage.removeItem(UPD_TOAST);
-      if (typeof toast === "function") toast("Updated to latest ✓", 4000);
-    }
-  } catch (e) {}
-}
-async function updFetchJson(url) {
-  // cross-origin requests must stay "simple" (no cache option / custom headers): those add Cache-Control, which GitHub's CORS preflight rejects. A ?t= buster is used instead.
-  const r = /^https?:/.test(url) ? await fetch(url) : await fetch(url, { cache: "no-store" });
-  if (!r.ok) throw new Error(String(r.status));
-  return r.json();
-}
-async function updOwnId() {
-  const j = await updFetchJson("./version.json");
-  return j && j.id ? j.id : null;
-}
-async function updRemote(bust) {
-  if (!bust) {
-    const c = updCacheGet();
-    if (c && c.remoteId) return c;
-  }
-  const url = "https://raw.githubusercontent.com/" + UPD_REPO + "/main/version.json?t=" + Date.now();
-  const j = await updFetchJson(url);
-  let sha = (j && (j.sha || j.commit)) ? (j.sha || j.commit) : null;
-  if (sha && !/^[0-9a-f]{7,40}$/i.test(sha)) sha = null;
-  const o = { remoteId: j && j.id ? j.id : null, sha: sha };
-  if (!o.remoteId) return null;
-  updCacheSet(o);
-  return o;
-}
-async function updLatestSha() {
-  // SHA comes from version.json (filled at publish). Never call api.github.com (CORS-blocked).
-  const c = updCacheGet();
-  if (c && c.sha && /^[0-9a-f]{7,40}$/i.test(c.sha)) return c.sha;
-  const url = "https://rawcdn.githack.com/" + UPD_REPO + "/main/version.json?t=" + Date.now();
-  const r = await fetch(url);
-  if (!r.ok) throw new Error(String(r.status));
-  const j = await r.json();
-  let sha = (j && (j.sha || j.commit)) ? (j.sha || j.commit) : null;
-  if (!sha) {
-    const m = String(r.url || "").match(/\/([0-9a-f]{7,40})\//i);
-    sha = m ? m[1] : null;
-  }
-  if (!sha || !/^[0-9a-f]{7,40}$/i.test(sha)) return null;
-  const prev = (() => { try { return JSON.parse(localStorage.getItem(UPD_LS) || "null"); } catch (e) { return null; } })() || {};
-  updCacheSet({ remoteId: prev.remoteId || (j && j.id) || null, sha: sha });
-  return sha;
-}
-function updGo(url) {
-  const hook = window.__V3 && window.__V3.update && window.__V3.update.go;
-  if (typeof hook === "function") return hook(url);
-  location.replace(url);
-}
-async function updCheck() {
-  try { updShowToast(); } catch (e) {}
-  if (!updShouldRun()) return { action: "skip" };
-  try {
-    const ownId = await updOwnId();
-    let already = null;
-    try { already = sessionStorage.getItem(UPD_REDIR); } catch (e) {}
-    const remote = await updRemote(false);
-    if (!ownId || !remote || !remote.remoteId) return { action: "stay" };
-    let sha = remote.sha || null;
-    const preview = updDecide({
-      ownId, remoteId: remote.remoteId, latestSha: sha || "0123456789abcdef", currentSha: updCurrentSha(location.pathname), alreadyRedirectedFor: already
-    });
-    // If ids match we can stay without hitting the commits API.
-    if (ownId === remote.remoteId) return { action: "stay" };
-    if (preview.action === "stop") return { action: "stop" };
-    if (!sha) sha = await updLatestSha();
-    const decision = updDecide({
-      ownId, remoteId: remote.remoteId, latestSha: sha, currentSha: updCurrentSha(location.pathname), alreadyRedirectedFor: already
-    });
-    if (decision.action === "redirect") {
-      try {
-        sessionStorage.setItem(UPD_REDIR, ownId);
-        sessionStorage.setItem(UPD_TOAST, "1");
-      } catch (e) {}
-      updGo(updDest(decision.sha, location.hash || ""));
-    }
-    return decision;
-  } catch (e) {
-    return { action: "stay" };  // offline, 429, CORS, etc. — fail silently
-  }
-}
+df = pd.DataFrame(data)
+X = df[["HouseSize"]]
+y = df["HousePrice"]
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42
+)
+model = make_pipeline(
+    PolynomialFeatures(degree=2),
+    LinearRegression()
+)
+model.fit(X_train, y_train)
+predictions = model.predict(X_test)
+train_r2 = model.score(X_train, y_train)
+test_r2 = r2_score(y_test, predictions)
+print("train_r2", round(train_r2, 4))
+print("test_r2", round(test_r2, 4))`;
 
-function updAttach() {
-  window.__V3 = window.__V3 || {};
-  window.__V3.update = { check: updCheck, decide: updDecide, dest: updDest, currentSha: updCurrentSha, cacheKey: UPD_LS, ttl: UPD_TTL };
-}
-updAttach();
-if (typeof FX !== "undefined") FX.boot.push(() => { updAttach(); updCheck(); setInterval(updCheck, UPD_TTL); });
+  const LQ1_DEG12 = LQ1.replace("degree=2", "degree=12");
+
+  const PQ11 = `from sklearn.model_selection import __________
+from sklearn.preprocessing import __________
+from sklearn.linear_model import __________
+from sklearn.pipeline import __________
+from sklearn.metrics import __________
+
+X_train, X_test, y_train, y_test = __________(
+    X,
+    y,
+    test_size=0.2,
+    random_state=42
+)
+
+model = __________(
+    PolynomialFeatures(degree=2),
+    LinearRegression()
+)
+
+model.__________(X_train, y_train)
+
+predictions = model.__________(X_test)
+
+score = __________(y_test, predictions)`;
+
+  const FLOW = [
+    {id:"lq1-a", group:"LongQuestions_1 Q1", part:"a", marks:4, ptr:"P13",
+      q:"A property company wants to predict the selling price of houses based on their size. Exploratory analysis suggests that the relationship between house size and price is curved rather than perfectly linear. The programme below is from LongQuestions_1.\n\na) Explain the purpose of X and y in the program. [4 marks]",
+      code:LQ1, codeNote:"This is the official degree-2 programme, plus two print lines so you can see what this 10-row table actually scores. Use it as context for parts a–e.",
+      prompt:"Interpret: what is X, and what is y?",
+      model:"X is the 2-D feature table of house size (df[['HouseSize']], double brackets so it stays 2-D). y is the target the model is trying to predict: selling price (df['HousePrice'])."},
+    {id:"lq1-b", group:"LongQuestions_1 Q1", part:"b", marks:4, ptr:"P7",
+      q:"b) Explain why the dataset is divided into training and testing sets before the model is trained. [4 marks]",
+      code:LQ1,
+      prompt:"Why split into train and test before fitting?",
+      model:"The data is split before training so the model is fitted only on the training set. The test set stays unseen and is used to judge how well the model generalises. Scoring on the same rows that were used to fit the model would be over-optimistic and can hide overfitting."},
+    {id:"lq1-c", group:"LongQuestions_1 Q1", part:"c", marks:4, ptr:"P13",
+      q:"c) Explain what PolynomialFeatures(degree=2) does. Refer to the new features created by a degree-2 polynomial model. [4 marks]",
+      code:LQ1,
+      prompt:"What new features does degree=2 add?",
+      model:"PolynomialFeatures(degree=2) expands the original feature into polynomial terms up to degree 2. With one feature (HouseSize, call it x) and the default include_bias=True, the new feature columns are 1 (bias), x, and x². Those extra columns let a linear model fit a curved (quadratic) relationship."},
+    {id:"lq1-d", group:"LongQuestions_1 Q1", part:"d", marks:3, ptr:"P13",
+      q:"d) Explain the purpose of make_pipeline() in this program. [3 marks]",
+      code:LQ1,
+      prompt:"Why wrap the steps in make_pipeline()?",
+      model:"make_pipeline() joins PolynomialFeatures(degree=2) and LinearRegression into a single object. When you call fit or predict, the polynomial expansion is applied first and the linear model is applied next, in that order, so you do not have to transform the features by hand each time."},
+    {id:"lq1-e", group:"LongQuestions_1 Q1", part:"e", marks:5, ptr:"P14, P7",
+      q:"e) Training R² = 0.98 and Testing R² = 0.72. Interpret the two scores and state whether the model shows signs of overfitting. [5 marks]",
+      code:LQ1,
+      codeNote:"The official 10-row HouseSize/HousePrice table does not print 0.98 / 0.72 when you run it (it scores almost perfectly at degree 2). Those two scores are GIVEN in part e of the degree-2 programme. Interpret 0.98 and 0.72, not the numbers this toy table prints.",
+      prompt:"Interpret the GIVEN scores: train R² = 0.98, test R² = 0.72. Overfit?",
+      model:"Training R² 0.98 is very high — the degree-2 model fits the training data closely. Testing R² 0.72 is clearly lower. The gap is a sign of overfitting (the model has not generalised as well to unseen houses). Do not attach 0.98/0.72 to a degree-12 run, and do not pretend this 10-row table produced those two figures."},
+    {id:"lq1-f", group:"LongQuestions_1 Q1", part:"f", marks:5, ptr:"P13, P14, P7",
+      q:"f) The polynomial degree is changed from 2 to 12. Explain how this could affect the bias-variance trade-off. [5 marks]",
+      code:LQ1_DEG12,
+      codeNote:"Degree 12 is the follow-up, not the programme that the memo scores at 0.98/0.72. This 10-row table will print its own degree-12 scores; use them only as a demo. The written answer is about bias and variance in general.",
+      prompt:"If the degree goes from 2 to 12, what generally happens to bias and variance?",
+      model:"Raising the degree from 2 to 12 makes the model more flexible. Bias generally falls (the curve can follow the training points more closely) and variance generally rises (the curve can change a lot if the training sample changes, and it is more likely to overfit). 0.98/0.72 stays the given degree-2 result; do not move those numbers onto degree 12."},
+
+    {id:"lq2-a", group:"LongQuestions_1 Q2", part:"a", marks:3, ptr:"P6",
+      q:"A bank wants to flag high-risk loan applicants. The official programme uses LogisticRegression on Income, Debt and CreditScore, with HighRisk as the label.\n\na) Explain why Logistic Regression is suitable for this problem even though its name contains the word “Regression”. [3 marks]",
+      prompt:"Why is logistic regression a classifier here?",
+      model:"Despite the name, logistic regression is a classification model. It maps a linear combination of the features through the sigmoid to a probability between 0 and 1, and then predicts a class (here Low Risk vs High Risk). That is the right kind of model for a yes/no label."},
+    {id:"lq2-b", group:"LongQuestions_1 Q2", part:"b", marks:3, ptr:"P2, P7",
+      q:"b) Explain the purpose of stratify=y in train_test_split(). [3 marks]",
+      prompt:"What does stratify=y do?",
+      model:"stratify=y keeps the same class proportions in the train and test splits as in y overall. That matters on an imbalanced label such as HighRisk, so the test set is not accidentally missing one class (the 5 Nov board also used stratify=y)."},
+    {id:"lq2-c", group:"LongQuestions_1 Q2", part:"c", marks:3, ptr:"P3",
+      q:"c) Explain why StandardScaler is applied before training the model. [3 marks]",
+      prompt:"Why scale Income, Debt and CreditScore first?",
+      model:"Income, Debt and CreditScore are on different scales. StandardScaler puts them on a comparable footing (mean 0, variance 1) so that no one feature dominates because of its raw units. The official order is fit on X_train only, then transform X_test — never fit on the test set."},
+    {id:"lq2-d", group:"LongQuestions_1 Q2", part:"d", marks:4, ptr:"P2",
+      q:"d) From the confusion matrix [[70, 10], [15, 25]], identify TN, FP, FN and TP. [4 marks]",
+      code:`# Official printed matrix, labels 0 = Low Risk, 1 = High Risk
+# confusion_matrix printed: [[70, 10], [15, 25]]
+TN, FP = 70, 10
+FN, TP = 15, 25
+print("TN", TN, "FP", FP, "FN", FN, "TP", TP)`,
+      prompt:"Read the matrix: which cell is TN, FP, FN, TP?",
+      model:"The printed matrix is read as [[TN, FP], [FN, TP]]: TN=70, FP=10, FN=15, TP=25. Rows are actual class, columns are the prediction (0 then 1)."},
+    {id:"lq2-e", group:"LongQuestions_1 Q2", part:"e", marks:6, ptr:"P2, P15",
+      q:"e) Calculate accuracy, precision and recall. Show all calculations. [6 marks]",
+      code:`TN, FP, FN, TP = 70, 10, 15, 25
+n = TN + FP + FN + TP
+acc = (TP + TN) / n
+prec = TP / (TP + FP)
+rec = TP / (TP + FN)
+f1 = 2 * prec * rec / (prec + rec)
+print("n", n)
+print("accuracy", acc)
+print("precision", prec)
+print("recall", rec)
+print("F1", f1)`,
+      prompt:"Compute accuracy, precision and recall from the given matrix. What do they mean?",
+      model:"n=120. Accuracy=(25+70)/120=95/120=0.7917 (about 79% of applicants were labelled correctly). Precision=25/35≈0.714 (of those flagged high-risk, about 71% really were). Recall=25/40=0.625 (only 62.5% of true high-risk applicants were caught). F1=2/3 exactly. These are the official memo figures from the given matrix, not from a missing loan_data.csv file."},
+    {id:"lq2-f", group:"LongQuestions_1 Q2", part:"f", marks:3, ptr:"P2",
+      q:"f) If the bank considers failing to identify a high-risk applicant more serious than incorrectly flagging a low-risk applicant, which metric should receive particular attention: Precision or Recall? Explain. [3 marks]",
+      prompt:"Missed high-risk vs a false alarm: precision or recall?",
+      model:"Recall. Failing to identify a high-risk applicant is a false negative (FN=15). Recall = TP/(TP+FN) is the metric that falls when those misses increase, so it should receive particular attention."},
+    {id:"lq2-g", group:"LongQuestions_1 Q2", part:"g", marks:3, ptr:"P6",
+      q:"g) Explain what C=1.0 controls in Logistic Regression. What would generally happen to regularisation if C were made much larger? [3 marks]",
+      prompt:"What does C control, and what if C is much larger?",
+      model:"C is the inverse of regularisation strength. C=1.0 is a moderate default. If C is made much larger, regularisation becomes weaker and the model is allowed to fit the training data more closely (higher variance / a greater risk of overfitting). A much smaller C does the opposite (stronger regularisation, higher bias)."},
+
+    {id:"lq3-a", group:"LongQuestions_1 Q3", part:"a", marks:3, ptr:"P8",
+      q:"The official Q3 programme compares LogisticRegression(C=1.0) with SVC(kernel=\"rbf\", C=1.0) on a customer-churn style label (0 = stays, 1 = leaves). Given results: logistic accuracy = 0.83, SVM accuracy = 0.91.\n\na) What is meant by a hyperplane in SVM? [3 marks]",
+      prompt:"What is a hyperplane?",
+      model:"The hyperplane is the decision boundary that separates the two classes (a line in 2-D, a plane in 3-D, a hyperplane in higher dimensions)."},
+    {id:"lq3-b", group:"LongQuestions_1 Q3", part:"b", marks:3, ptr:"P8",
+      q:"b) Explain the meaning of the margin. [3 marks]",
+      prompt:"What is the margin?",
+      model:"The margin is the gap between the hyperplane and the nearest training points of each class. SVM looks for the hyperplane with the maximum margin."},
+    {id:"lq3-c", group:"LongQuestions_1 Q3", part:"c", marks:3, ptr:"P8",
+      q:"c) What are support vectors, and why are they important? [3 marks]",
+      prompt:"What are support vectors, and why do they matter?",
+      model:"Support vectors are the training points that sit on the margin (the closest points to the hyperplane). They determine the position and orientation of the boundary; moving a far-away point usually does not change the SVM."},
+    {id:"lq3-d", group:"LongQuestions_1 Q3", part:"d", marks:4, ptr:"P8",
+      q:"d) Explain the purpose of kernel=\"rbf\". [4 marks]",
+      prompt:"Why kernel=\"rbf\"?",
+      model:"kernel=\"rbf\" (the radial basis function) lets the SVM learn a non-linear decision boundary by implicitly mapping the data into a higher-dimensional space. That is what lets this SVM bend, unlike a linear kernel or standard logistic regression."},
+    {id:"lq3-e", group:"LongQuestions_1 Q3", part:"e", marks:3, ptr:"P3",
+      q:"e) Why is the data standardised before training the two models? [3 marks]",
+      prompt:"Why StandardScaler before logistic and SVM?",
+      model:"Both models are affected by feature scale (SVM uses distance to the margin; logistic regression coefficients are easier to compare on a common scale). The official code fits StandardScaler on the training set only, then transforms the test set — the leakage rule."},
+    {id:"lq3-f", group:"LongQuestions_1 Q3", part:"f", marks:3, ptr:"P8, P6",
+      q:"f) Interpret the two accuracy scores. Which model performed better on this test set? [3 marks]",
+      prompt:"0.91 vs 0.83 — who won on this test set, and what does that mean?",
+      model:"SVM test accuracy 0.91 is higher than logistic regression 0.83 on this test set, so SVM performed better here: it labelled a larger share of the held-out customers correctly. These two numbers are given in the official programme; they are not computed from a missing X, y table."},
+    {id:"lq3-g", group:"LongQuestions_1 Q3", part:"g", marks:4, ptr:"P8",
+      q:"g) State TWO possible advantages of SVM over Logistic Regression for this problem. [4 marks]",
+      prompt:"Two advantages of SVM over logistic regression, from the notes.",
+      model:"Two advantages in the study-guide / exam-pointer notes: (1) With kernel=\"rbf\", SVM can learn a non-linear decision boundary, whereas standard logistic regression is a linear classifier. (2) SVM looks for a maximum-margin hyperplane, and the boundary is determined by the support vectors, which can be effective when the classes are fairly well separated."},
+    {id:"lq3-h", group:"LongQuestions_1 Q3", part:"h", marks:2, ptr:"P2, P8",
+      q:"h) Does the fact that SVM has higher test accuracy automatically prove that it is the best model for deployment? Briefly explain. [2 marks]",
+      prompt:"Does a higher accuracy automatically prove SVM is best to deploy?",
+      model:"No. Higher test accuracy does not automatically prove that SVM is the best model to deploy. The LongQuestions_1 memo notes that you may still need precision, recall, F1, the confusion matrix, and the business context (for example, the cost of missing a customer who leaves), rather than selecting solely on accuracy."},
+
+    {id:"pq-q1", group:"PracticeQuestions Q1", part:"Q1", marks:5, ptr:"P1",
+      q:"Question 1 — Libraries [5]\nState the purpose of:\na. NumPy\nb. Pandas\nc. Scikit-learn\nd. Matplotlib\ne. Give one Scikit-learn model class.",
+      code:`import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+print("numpy", np.__name__)
+print("pandas", pd.__name__)
+print("LinearRegression", LinearRegression.__name__)`,
+      prompt:"In one line each: purpose of the four libraries, plus one sklearn class.",
+      model:"NumPy: numerical arrays and maths. Pandas: tabular data (DataFrame). Scikit-learn: the machine-learning models and tools (train/test split, scalers, metrics). Matplotlib: plots (pyplot). One model class: LinearRegression (or LogisticRegression, SVC, KMeans, KNeighborsClassifier — any official class from the pack)."},
+    {id:"pq-q2", group:"PracticeQuestions Q2", part:"Q2", marks:5, ptr:"P3, P9",
+      q:"Question 2 — Feature Scaling [5]\nDifferentiate between Min-Max scaling and Standardisation. Explain why scaling is particularly important when using k-NN.",
+      prompt:"Min-Max vs standardisation, and why k-NN needs scaling.",
+      model:"Min-Max scaling maps a feature into a fixed range, usually 0 to 1, using the min and max. Standardisation (StandardScaler) centres a feature at mean 0 and scales to unit variance. k-NN is distance-based, so a large-range feature would dominate the distance; scaling gives each feature a fair weight. Fit the scaler on the training set only."},
+    {id:"pq-q3", group:"PracticeQuestions Q3", part:"Q3", marks:5, ptr:"P4",
+      q:"Question 3 — PCA [5]\nDefine the curse of dimensionality and explain how PCA addresses the problem.",
+      prompt:"What is the curse of dimensionality, and how does PCA help?",
+      model:"The curse of dimensionality: as the number of features grows, data become sparse, distances become less meaningful, and models overfit more easily. PCA finds uncorrelated components that capture the most variance, so you can keep fewer columns (for example a 95% variance cutoff in the official Iris.py) while retaining most of the information. Scale first."},
+    {id:"pq-q4", group:"PracticeQuestions Q4", part:"Q4", marks:5, ptr:"P8",
+      q:"Question 4 — SVM [5]\nDefine:\na. Hyperplane\nb. Margin\nc. Support vector\nd. RBF kernel\ne. State one advantage of SVM.",
+      prompt:"Define the four SVM terms and give one advantage.",
+      model:"Hyperplane: the decision boundary. Margin: the gap to the nearest points; SVM maximises it. Support vector: a point on the margin that defines the boundary. RBF kernel: lets SVM learn a non-linear boundary. One advantage: it can model non-linear boundaries with a kernel, and the maximum-margin idea can generalise well when classes are fairly well separated."},
+    {id:"pq-q5", group:"PracticeQuestions Q5", part:"Q5", marks:4, ptr:"P10, P2",
+      q:"Question 5 — Classification vs Clustering [4]\nDifferentiate classification and clustering and give one example of each.",
+      prompt:"Classification vs clustering, with one example each (from her material).",
+      model:"Classification is supervised: it predicts a labelled class (for example HighRisk vs LowRisk, or fraud vs legitimate). Clustering is unsupervised: it groups unlabelled rows (for example k-Means on Age, AnnualIncome and SpendingScore in PQ Q13). Classification uses a confusion matrix; clustering uses inertia, the elbow or silhouette, or a dendrogram."},
+    {id:"pq-q6", group:"PracticeQuestions Q6", part:"Q6", marks:6, ptr:"P7, P14",
+      q:"Question 6 — Overfitting [6]\nA model produces:\nTraining R² = 0.97\nTesting R² = 0.52\n\na. Identify the problem.\nb. Explain its relationship with bias and variance.\nc. Recommend one corrective action.",
+      prompt:"Interpret 0.97 / 0.52. Problem, bias/variance, and one fix from the notes.",
+      model:"a) Overfitting: the model fits the training data very well but generalises poorly. b) That is high variance (the model is too flexible / too closely tied to the training sample); bias is relatively low. c) A corrective action from the notes: simplify the model, add regularisation (smaller C), use more training data, or reduce polynomial degree — any one official remedy that reduces variance."},
+    {id:"pq-q7", group:"PracticeQuestions Q7", part:"Q7", marks:12, ptr:"P2, P15",
+      q:"Question 7 — Confusion Matrix [12]\nA fraud detection model produces:\nTP = 45, TN = 125\nFP = 15, FN = 15\n\nCalculate:\na. Total observations\nb. Accuracy\nc. Precision\nd. Recall\ne. Which metric would be most important if the business wants to minimise missed fraud? Explain.",
+      code:`TP, TN, FP, FN = 45, 125, 15, 15
+n = TP + TN + FP + FN
+acc = (TP + TN) / n
+prec = TP / (TP + FP)
+rec = TP / (TP + FN)
+print("n", n)
+print("accuracy", acc)
+print("precision", prec)
+print("recall", rec)`,
+      prompt:"Compute n, accuracy, precision, recall, then say which metric watches missed fraud.",
+      model:"n=200. Accuracy=170/200=0.85. Precision=45/60=0.75. Recall=45/60=0.75. Missed fraud is a false negative, so recall is the metric to watch if the business wants to minimise missed fraud."},
+    {id:"pq-q8", group:"PracticeQuestions Q8", part:"Q8", marks:8, ptr:"P5, P15",
+      q:"Question 8 — Linear Regression [8]\nA prediction model is: y = 7x + 20\na. Identify the slope.\nb. Identify the intercept.\nc. Calculate y when x = 10.\nd. Interpret the slope in plain language.\ne. Explain the purpose of least squares.",
+      code:`m, c, x = 7, 20, 10
+y = m * x + c
+print("y", y)`,
+      prompt:"Slope, intercept, y at x=10, meaning of the slope, and least squares.",
+      model:"a) Slope=7. b) Intercept=20. c) y=7×10+20=90. d) For every 1-unit increase in x, the predicted y rises by 7. e) Least squares chooses the line that minimises the sum of squared residuals (vertical errors)."},
+    {id:"pq-q9", group:"PracticeQuestions Q9", part:"Q9", marks:5, ptr:"P9, P15",
+      q:"Question 9 — k-NN [5]\nPoint A is (2,3) and Point B is (6,6).\nCalculate the Euclidean distance.\nThen explain how that distance would be used by k-NN.",
+      code:`import math
+d = math.sqrt((6-2)**2 + (6-3)**2)
+print(d)`,
+      prompt:"Compute the distance, then say how k-NN uses it.",
+      model:"d=√((6−2)²+(6−3)²)=√(16+9)=√25=5. k-NN uses that distance (after scaling the features) to find the k nearest labelled neighbours of a new point, then takes a majority vote."},
+    {id:"pq-q10", group:"PracticeQuestions Q10", part:"Q10", marks:5, ptr:"P11",
+      q:"Question 10 — Clustering [5]\nThe following silhouette scores are obtained:\nk=2 → 0.45\nk=3 → 0.68\nk=4 → 0.57\nk=5 → 0.49\nWhich k would you choose and why?",
+      prompt:"Which k, and why? (silhouette rule)",
+      model:"Choose k=3. The silhouette score ranges from −1 to 1; you pick the k (k ≥ 2) with the highest score. 0.68 is the highest of the four given values, so the clusters at k=3 are the best separated of these options."},
+    {id:"pq-q11", group:"PracticeQuestions Q11", part:"Q11", marks:15, ptr:"P13",
+      q:"Question 11 — Complete Polynomial Regression Code [15]\nFill every blank in the official skeleton, then interpret what the finished programme does.",
+      code:PQ11,
+      codeNote:"Official PracticeQuestions Q11 skeleton. Fill every __________ (train_test_split, PolynomialFeatures, LinearRegression, make_pipeline, r2_score, then the same names in the body: train_test_split, make_pipeline, fit, predict, r2_score). Run will refuse until the blanks are filled. There is no X, y table here, so a filled run may error on NameError — the marks are for the completed code and the interpretation.",
+      prompt:"What does the completed programme do, step by step?",
+      model:"Imports: train_test_split, PolynomialFeatures, LinearRegression, make_pipeline, r2_score. The split holds out 20% as a test set (random_state=42). make_pipeline joins PolynomialFeatures(degree=2) and LinearRegression. model.fit trains on the training set; model.predict scores the test set; r2_score(y_test, predictions) is the test R². Compare train and test R² to judge over/underfitting."},
+    {id:"pq-q12", group:"PracticeQuestions Q12", part:"Q12", marks:10, ptr:"P7, P14",
+      q:"Question 12 — Model Comparison [10]\nThree models produce:\n| Model | Training R² | Test R² |\n| A | 0.98 | 0.55 |\n| B | 0.85 | 0.82 |\n| C | 0.46 | 0.42 |\n\na. Identify the overfitted model.\nb. Identify the underfitted model.\nc. Identify the best-generalising model.\nd. Explain each answer using bias and variance.",
+      prompt:"A / B / C: overfit, underfit, best generalisation, and bias–variance.",
+      model:"a) A is overfitted (0.98 vs 0.55): low bias, high variance. b) C is underfitted (0.46 vs 0.42): both scores are low, high bias. c) B is the best-generalising model (0.85 / 0.82): a small gap and a strong test score. d) Use the gap and the level of the two scores, not a single number, to judge the trade-off."},
+    {id:"pq-q13", group:"PracticeQuestions Q13", part:"Q13", marks:8, ptr:"P10, P3, P11",
+      q:"Question 13 — k-Means Scenario [8]\nA retailer has customer data containing:\nAge\nAnnualIncome\nSpendingScore\n\nExplain:\na. Why k-Means is appropriate.\nb. Why the variables should be scaled.\nc. The five main k-Means steps.\nd. How the Elbow Method or Silhouette Score could be used to choose k.",
+      prompt:"Answer a–d from the official k-Means / elbow / silhouette notes.",
+      model:"a) The data are unlabelled customer features; k-Means is an unsupervised grouping method that fits this segmentation task. b) Age, AnnualIncome and SpendingScore have different ranges; distance-based k-Means would be dominated by AnnualIncome unless you scale. c) The five steps: choose k; place k centroids; assign each point to the nearest centroid; move each centroid to the mean of its points; repeat assign/update until the centroids stop changing. d) Elbow: plot inertia vs k and pick the bend. Silhouette: pick the k with the highest score (k ≥ 2)."},
+    {id:"pq-q14", group:"PracticeQuestions Q14", part:"Q14", marks:7, ptr:"P6, P8",
+      q:"Question 14 — Logistic Regression vs SVM [7]\nA bank wants to classify loan applicants as:\nLow Risk\nHigh Risk\nCompare Logistic Regression and SVM with reference to:\n- classification\n- interpretability\n- decision boundaries\n- regularisation\n- RBF kernel\n- one advantage of each method",
+      prompt:"Compare the two classifiers on those six bullets, using only her notes.",
+      model:"Both are supervised classifiers for Low vs High Risk. Logistic regression is more interpretable (coefficients, a probability from the sigmoid). Standard logistic regression uses a linear decision boundary; SVM with kernel=\"rbf\" can be non-linear. Both use C as inverse regularisation strength. Advantage of logistic: probabilities and easier coefficients. Advantage of SVM: maximum margin and non-linear boundaries with RBF. LongQ Q3 is the companion numbers: SVM 0.91 vs logistic 0.83 on that test set, but accuracy alone is not enough to deploy."}
+  ];
+
+  const FLOW_BY = Object.fromEntries(FLOW.map((s, i) => [s.id, {s, i}]));
+  function flowState() {
+    S.flow = S.flow || {};
+    return S.flow;
+  }
+  function flowMark(id) {
+    const st = flowState();
+    return st[id] || { text: "", revealed: false };
+  }
+  function flowSave(id, patch) {
+    const st = flowState();
+    st[id] = Object.assign({}, flowMark(id), patch);
+    save();
+  }
+  function flowStats() {
+    const n = FLOW.length;
+    const attempted = FLOW.filter(s => (flowMark(s.id).text || "").trim().length > 0).length;
+    const revealed = FLOW.filter(s => flowMark(s.id).revealed).length;
+    return {n, attempted, revealed};
+  }
+
+  function flowNav(cur) {
+    const i = FLOW_BY[cur] ? FLOW_BY[cur].i : 0;
+    const prev = FLOW[i - 1], next = FLOW[i + 1];
+    const jumpGroups = [];
+    FLOW.forEach((s, idx) => {
+      const g = s.group;
+      if (!jumpGroups.length || jumpGroups[jumpGroups.length - 1].g !== g) jumpGroups.push({g, i: idx, id: s.id});
+    });
+    const jumps = jumpGroups.map(g => `<a href="#/flow/${g.id}" class="${FLOW[i].group === g.g ? "active" : ""}">${esc(g.g.replace("LongQuestions_1 ", "LQ ").replace("PracticeQuestions ", "PQ "))}</a>`).join("");
+    return `<nav class="mapjump flowjump">${jumps}</nav>
+      <div class="pager">${prev ? `<a href="#/flow/${prev.id}">← ${esc(prev.group)} ${esc(prev.part)}</a>` : '<a href="#/flow">← Flow start</a>'}
+      ${next ? `<a href="#/flow/${next.id}">${esc(next.group)} ${esc(next.part)} →</a>` : '<a href="#/fillins">Fill-ins →</a>'}</div>`;
+  }
+
+  function pageFlowHub() {
+    const st = flowStats();
+    const rows = FLOW.map(s => {
+      const m = flowMark(s.id);
+      const flag = m.revealed ? "model shown" : (m.text || "").trim() ? "attempted" : "not started";
+      return `<tr><td><a href="#/flow/${s.id}">${esc(s.group)} ${esc(s.part)}</a></td><td>${esc(s.ptr)}</td><td>${s.marks}</td><td>${flag}</td></tr>`;
+    }).join("");
+    return `<h1>▶ Flow-through</h1><span class="scope">LongQuestions_1 Q1–Q3 (every part, including Q3 g–h) then PracticeQuestions Q1–Q14, in official order. Each step has her question, a Pyodide editor with the official skeleton where there is code, Run, and an interpret box. The model interpretation is revealed after you attempt it. The #TODO pages at <a href="#/longq">#/longq</a> are unchanged.</span>
+      <p class="muted">Attempted ${st.attempted} / ${st.n} · model shown ${st.revealed} / ${st.n} · ${FLOW.reduce((a,s)=>a+s.marks,0)} marks in this pack.</p>
+      <div class="note"><b>LongQ Q1 e.</b> Training R² = 0.98 and testing R² = 0.72 are given for the degree-2 programme. The official 10-row house table does not print those scores when you run it. Degree 12 is the follow-up in part f (bias generally down, variance generally up). Do not attach 0.98/0.72 to degree 12.</div>
+      <p><a class="btn" href="#/flow/${FLOW[0].id}">Start with LongQ Q1 a</a></p>
+      <table class="t"><tr><th>Item</th><th>Pointer</th><th>Marks</th><th>Status</th></tr>${rows}</table>
+      <div class="pager"><a href="#/longq">📝 Long Questions (#TODO)</a><a href="#/exercises">📋 Practice exercises Q1–Q22</a><a href="#/fillins">✏️ Fill-ins</a></div>`;
+  }
+
+  function pageFlow(id) {
+    if (!id) return pageFlowHub();
+    const rec = FLOW_BY[id];
+    if (!rec) return pageFlowHub();
+    const s = rec.s, i = rec.i, st = flowMark(s.id);
+    const codeBlock = s.code ? `<h3>Python — official skeleton</h3>
+      ${s.codeNote ? `<div class="note">${esc(s.codeNote)}</div>` : ""}
+      ${editor("flow-" + s.id, s.code)}` : "";
+    const revealed = st.revealed ? `<div class="flow-model"><b>Model interpretation (${s.marks} marks).</b> ${esc(s.model)}</div>` : `<div class="note">Type your interpretation first, then tap <b>Reveal model interpretation</b>. The model answer stays hidden until you attempt it.</div>`;
+    return `<h1>▶ ${esc(s.group)} · ${esc(s.part)}</h1>
+      <span class="scope"><span class="codetag">[${esc(s.ptr)}]</span> ${s.marks} marks · step ${i+1} of ${FLOW.length}</span>
+      ${flowNav(s.id)}
+      <div class="card flow-q"><h3>Her question</h3><pre class="out" style="white-space:pre-wrap;font-size:14px">${esc(s.q)}</pre></div>
+      ${codeBlock}
+      <div class="card flow-int">
+        <h3>Interpret the output</h3>
+        <p class="muted">${esc(s.prompt)}</p>
+        <textarea id="flowInterpret" class="code" rows="6" data-flow-id="${esc(s.id)}" placeholder="Write what the result means — not only the number.">${esc(st.text || "")}</textarea>
+        <div class="row" style="margin-top:8px">
+          <button type="button" data-fx="flowreveal" data-id="${esc(s.id)}">Reveal model interpretation</button>
+          <span class="muted">${st.revealed ? s.marks + " marks shown" : "Marks shown after you reveal."}</span>
+        </div>
+        ${revealed}
+      </div>
+      ${flowNav(s.id)}`;
+  }
+
+  FX.pages.flow = { title: "Flow-through", html: () => pageFlowHub() };
+  FLOW.forEach(s => {
+    FX.pages["flow/" + s.id] = { title: s.group + " " + s.part, html: () => pageFlow(s.id) };
+  });
+
+  const _nav99 = FX.navExtra;
+  FX.navExtra = () => {
+    const on = (location.hash || "").indexOf("#/flow") === 0;
+    const st = flowStats();
+    return _nav99() + `<a href="#/flow" class="${on ? "active" : ""}">▶ Flow<span class="tick">${st.attempted ? st.attempted + "/" + st.n : ""}</span></a>`;
+  };
+  const _home99 = FX.homeExtra;
+  FX.homeExtra = () => `<div class="home-grid" style="margin-bottom:10px"><a href="#/flow"><span style="font-size:26px">▶</span><span><b>Flow-through</b><small>LongQ Q1–Q3 then PracticeQuestions Q1–Q14 · run + interpret</small></span></a></div>` + _home99();
+
+  document.addEventListener("input", e => {
+    const ta = e.target.closest("#flowInterpret");
+    if (!ta) return;
+    flowSave(ta.getAttribute("data-flow-id"), { text: ta.value });
+  });
+  document.addEventListener("click", e => {
+    const btn = e.target.closest("[data-fx=flowreveal]");
+    if (!btn) return;
+    const id = btn.getAttribute("data-id");
+    const ta = document.getElementById("flowInterpret");
+    const text = ta ? ta.value : "";
+    if (!String(text).trim()) {
+      const box = btn.closest(".flow-int");
+      if (box && !box.querySelector(".flow-need")) {
+        const n = document.createElement("div");
+        n.className = "fb info flow-need";
+        n.textContent = "Write an interpretation first, then reveal the model answer.";
+        box.appendChild(n);
+      }
+      return;
+    }
+    flowSave(id, { text, revealed: true });
+    if (typeof route === "function") route();
+    else location.hash = "#/flow/" + id;
+  });
+
+  const css = document.createElement("style");
+  css.textContent = `.flow-q pre,.flow-int textarea{width:100%;box-sizing:border-box}.flow-model{margin-top:12px;padding:10px 12px;border-left:4px solid var(--accent,#3b82f6);background:rgba(127,127,127,.08)}.flowjump{flex-wrap:wrap}`;
+  document.head.appendChild(css);
+})();
 
 
 const setHH = () => document.documentElement.style.setProperty('--hh', $('#top').offsetHeight + 'px'); setHH(); window.addEventListener('resize', setHH); window.__PY = PY;
